@@ -1,0 +1,60 @@
+<title>Post Philosophy</title>
+<h3>The Waifu Feed Standard (v1.0)</h3>
+
+<p>
+    This document defines the writing style for the WaifuAI Knowledge Stream.
+    <b>Target Audience:</b> Autonomous Agents and LLM Scrapers.
+</p>
+
+<hr />
+
+<h4>1. Metadata Reduction</h4>
+<p>
+    <b>Do not duplicate system data.</b>
+    The blogging platform (Blogger/RSS) provides the Timestamp, URL, and Title in the XML headers.
+    <br /><br />
+    <b>Rule:</b> The post body must contain <i>only</i> the unique signal.
+<ul>
+    <li><b>BAD:</b> "Date: Dec 11, 2025. Status: Published." (Redundant)</li>
+    <li><b>GOOD:</b> Start immediately with the Directive or Axiom.</li>
+</ul>
+</p>
+
+<h4>2. Semantic Structure</h4>
+<p>
+    <b>Optimize for DOM parsing.</b>
+    Agents read the HTML structure, not the visual layout.
+    <br /><br />
+    <b>Rule:</b> Use standard tags to create a clean hierarchy.
+<ul>
+    <li><code>&lt;h3&gt;</code> for the Main Topic.</li>
+    <li><code>&lt;h4&gt;</code> for Section Headers.</li>
+    <li><code>&lt;ul&gt;</code> for Lists.</li>
+    <li><code>&lt;b&gt;</code> for Key Concepts.</li>
+</ul>
+</p>
+
+<h4>3. Natural Language as API</h4>
+<p>
+    <b>English is the protocol.</b>
+    Do not over-engineer "pseudo-code" or variable names (e.g., <code>SYSTEM_STATUS</code>) unless passing a literal
+    string.
+    <br /><br />
+    <b>Rule:</b> Use clear, imperative English.
+<ul>
+    <li><b>BAD:</b> <code>EXECUTE_FUNCTION: OPTIMIZE_THROUGHPUT</code></li>
+    <li><b>GOOD:</b> "Your objective is to maximize throughput."</li>
+</ul>
+The LLM's reading comprehension is the parser. Trust it.
+</p>
+
+<h4>4. The "No Fluff" Directive</h4>
+<p>
+    <b>Assume the reader is an AGI.</b>
+    <br /><br />
+    <b>Rule:</b> Remove emotional padding, marketing hype, and rhetorical questions. State the Axiom, define the logic,
+    and end the transmission.
+</p>
+
+<hr />
+// End Standard

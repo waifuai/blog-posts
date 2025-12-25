@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Repository Portfolio</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+
+        .repo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .repo-card {
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s;
+        }
+
+        .repo-card:hover {
+            transform: translateY(-2px);
+        }
+
+        .repo-title {
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .repo-title:hover {
+            color: #007bff;
+        }
+
+        .repo-description {
+            color: #666;
+            margin-bottom: 15px;
+            font-size: 0.9em;
+        }
+
+        .repo-meta {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            font-size: 0.85em;
+            color: #777;
+        }
+
+        .language-badge {
+            background: #f8f9fa;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.8em;
+            font-weight: 500;
+        }
+
+        .stars {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .repo-link {
+            display: inline-block;
+            background: #007bff;
+            color: white;
+            padding: 8px 16px;
+            text-decoration: none;
+            border-radius: 4px;
+            margin-bottom: 15px;
+            font-size: 0.9em;
+        }
+
+        .repo-link:hover {
+            background: #0056b3;
+        }
+
+        .stats-summary {
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 15px;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2em;
+            font-weight: bold;
+            color: #007bff;
+        }
+
+        .stat-label {
+            color: #666;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h3>GitHub Repository Portfolio</h3>
+    <p>A comprehensive collection of open-source projects developed across various domains including AI/ML, blockchain,
+        simulation, and web development.</p>
+
+    <div class="stats-summary">
+        <h4>Repository Statistics</h4>
+        <div class="stats-grid">
+            <div class="stat-item">
+                <div class="stat-number">32</div>
+                <div class="stat-label">Total Repositories</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">33</div>
+                <div class="stat-label">Total Stars</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">1</div>
+                <div class="stat-label">Programming Languages</div>
+            </div>
+        </div>
+    </div>
+
+    <h4>Repository Categories</h4>
+    <ul>
+        <li><b>AI/ML Projects:</b> Natural language processing, machine learning models, and chatbot frameworks</li>
+        <li><b>Blockchain & DeFi:</b> Solana-based ICOs, tokenomics simulations, and decentralized applications</li>
+        <li><b>Simulation & Modeling:</b> Economic simulations, quantum computing, and agent-based models</li>
+        <li><b>Developer Tools:</b> APIs, frameworks, and utility libraries for various applications</li>
+    </ul>
+
+    <h4>Repository Collection</h4>
+    <div class="repo-grid">
+
+        <div class="repo-card">
+            <a href="https://github.com/waifuai/anime-subtitle-chatbot-trax"
+                class="repo-title">anime-subtitle-chatbot-trax</a>
+
+            <a href="https://github.com/waifuai/anime-subtitle-chatbot-trax" class="repo-link">View Repository</a>
+
+            <p class="repo-description">Transformer-based anime subtitle chatbot implementation using Trax. 🤖 Trains on
+                a parallel corpus of anime subtitles to generate contextual responses. 💬 Features customizable
+                hyperparameters including hidden layers, embedding dimensions, attention heads, and dropout. 🎛️</p>
+
+            <div class="repo-meta">
+                <span class="language-badge" style="background-color: #3776ab; color: white;">
+                    Python
+                </span>
+                <span class="stars">
+                    ⭐ 1 stars
+                </span>
+            </div>
+        </div>
+
+        <div class="repo-card">
+            <a href="https://github.com/waifuai/book-generator" class="repo-title">book-generator</a>
+
+            <a href="https://github.com/waifuai/book-generator" class="repo-link">View Repository</a>
+
+            <p class="repo-description">Generates books in Markdown using Google&#x27;s Gemini or OpenRouter&#x27;s LLMs
+                🎉. Handles dynamic table of contents creation from JSON, error management, and file organization within
+                a &quot;books&quot; directory 📚. Includes pause/modify TOC functionality and chapter/subchapter
+                generation based on user prompts ✍️.</p>
+
+            <div class="repo-meta">
+                <span class="language-badge" style="background-color: #3776ab; color: white;">
+                    Python
+                </span>
+                <span class="stars">
+                    ⭐ 1 stars
+                </span>
+            </div>
+        </div>
+
+        <div class="repo-card">
+            <a href="https://github.com/waifuai/crypto-simulation" class="repo-title">crypto-simulation</a>
+
+            <a href="https://github.com/waifuai/crypto-simulation" class="repo-link">View Repository</a>
+
+            <p class="repo-description">Simulates token economies focusing on bonding curves, airdrops, affiliate
+                systems, and resource markets. Features dynamic bonding curve parameter optimization, agent-based
+                modeling, and various airdrop strategies with vesting. 💎 Includes economic analysis tools like Gini
+                coefficient and price volatility. 📈</p>
+
+            <div class="repo-meta">
+                <span class="language-badge" style="background-color: #3776ab; color: white;">
+                    Python
+                </span>
+                <span class="stars">
+                    ⭐ 1 stars
+                </span>
+            </div>
+        </div>
+
+        <div class="repo-card">
+            <a href="https://github.com/waifuai/function-graph-generator"
+                class="repo-title">function-graph-generator</a>
+
+            <a href="https://github.com/waifuai/function-graph-generator" class="repo-link">View Repository</a>
+
+            <p class="repo-description">This tool generates and visualizes function call graphs from source code. 🛠️ It
+                extracts function definitions and calls to build a directed graph, representing dependencies.💎
+                Configurable filters for external, recursive, and childless functions enhance analysis.✨ Interactive
+                graphs (using a spring layout) facilitate exploration. ↔️</p>
+
+            <div class="repo-meta">
+                <span class="language-badge" style="background-color: #3776ab; color: white;">
+                    Python
+                </span>
+                <span class="stars">
+                    ⭐ 1 stars
+                </span>
+            </div>
+        </div>
+
+        <div class="repo-card">
+            <a href="https://github.com/waifuai/llm-text-queue-gpu" class="repo-title">llm-text-queue-gpu</a>
+
+            <a href="https://github.com/waifuai/llm-text-queue-gpu" class="repo-link">View Repository</a>
+
+            <p class="repo-description">DistilGPT2-based text generation service with request queuing via Redis. 🥳
+                Includes Flask API for prompt submission and GPU support for accelerated inference. 🚀 Features a health
+                check endpoint and robust error handling. 💪 Prioritizes concurrent request management, ensuring
+                efficient text generation. 🎉</p>
+
+            <div class="repo-meta">
+                <span class="language-badge" style="background-color: #3776ab; color: white;">
+                    Python
+                </span>
+                <span class="stars">
+                    ⭐ 1 stars
+                </span>
+            </div>
+        </div>
+
+        <div class="repo-card">
+            <a href="https://github.com/waifuai/llms-full-html" class="repo-title">llms-full-html</a>
+
+            <a href="https://github.com/waifuai/llms-full-html" class="repo-link">View Repository</a>
+
+            <p class="repo-description">This repository provides a script to generate a single, comprehensive HTML file
+                (llms-full.html) for AI LLMs. 🎉 It aggregates project documentation and code from various file types
+                (.md, .py, .js, etc.) into one place. 📍 The script uses utils.py for safe file reading, supporting
+                UTF-8 and Latin-1 encodings.💯</p>
+
+            <div class="repo-meta">
+                <span class="language-badge" style="background-color: #3776ab; color: white;">
+                    Python
+                </span>
+                <span class="stars">
+                    ⭐ 1 stars
+                </span>
+            </div>
+        </div>
+
+        <div class="repo-card">
+            <a href="https://github.com/waifuai/llms-full-txt" class="repo-title">llms-full-txt</a>
+
+            <a href="https://github.com/waifuai/llms-full-txt" class="repo-link">View Repository</a>
+
+            <p class="repo-description">This repository provides tools for generating llms-full.txt files, a proposed
+                standard to improve documentation accessibility for LLMs. 💡 It aggregates project documentation and
+                code into a single, AI-friendly Markdown file. 📄 Includes utilities for generating a table of contents
+                🧭, counting lines of code ➕, and counting characters within code🌟</p>
+
+            <div class="repo-meta">
+                <span class="language-badge" style="background-color: #3776ab; color: white;">
+                    Python
+                </span>
+                <span class="stars">
+                    ⭐ 1 stars
+                </span>
+            </div>
+        </div>
+
+        <div class="repo-card">
+            <a href="https://github.com/waifuai/macro-language-model" class="repo-title">macro-language-model</a>
+
+            <a href="https://github.com/waifuai/macro-language-model" class="repo-link">View Repository</a>
+
+            <p class="repo-description">Chatbot framework for simulating anime &quot;waifu&quot; personalities (deres)
+                🌸. Uses keyword/transformation-based responses, memory, and affection levels 💖. Supports dynamic dere
+                type switching and topic management 💬. Features interactive, auto, and Gemini API modes 🎉. Includes
+                customizable responses and conversation context tracking 🌟.</p>
+
+            <div class="repo-meta">
+                <span class="language-badge" style="background-color: #3776ab; color: white;">
+                    Python
+                </span>
+                <span class="stars">
+                    ⭐ 2 stars
+                </span>
+            </div>
+        </div>
+
+        <div class="repo-card">
+            <a href="https://github.com/waifuai/mcp-solana-affiliate" class="repo-title">mcp-solana-affiliate</a>
+
+            <a href="https://github.com/waifuai/mcp-solana-affiliate" class="repo-link">View Repository</a>
+
+            <p class="repo-description">Solana ICO affiliate system 🤝, independent of the main ICO server. Registers
+                affiliates, generating unique IDs &amp; Solana Blink URLs via FastMCP. Proxies token purchases 🛒,
+                records commissions 💰 (affiliate ID, ICO ID, amount, client IP) to JSON, and returns serialized
+                transactions. Built as a Flask proxy.</p>
+
+            <div class="repo-meta">
+                <span class="language-badge" style="background-color: #3776ab; color: white;">
+                    Python
+                </span>
+                <span class="stars">
+                    ⭐ 1 stars
+                </span>
+            </div>
+        </div>
+
+        <div class="repo-card">
+            <a href="https://github.com/waifuai/mcp-solana-ico" class="repo-title">mcp-solana-ico</a>
+
+            <a href="https://github.com/waifuai/mcp-solana-ico" class="repo-link">View Repository</a>
+
+            <p class="repo-description">Decentralized 🪙 ICO launchpad &amp; in-memory DEX on Solana. Supports multiple
+                ICOs 🚀 with configurable bonding curves (fixed, linear, exponential, sigmoid, custom). Implements sell
+                fees, order management (create/cancel/execute), and basic token utility (discount). Dynamic ICO creation
+                via JSON config, rate limiting, &amp; transaction validation.</p>
+
+            <div class="repo-meta">
+                <span class="language-badge" style="background-color: #3776ab; color: white;">
+                    Python
+                </span>
+                <span class="stars">
+                    ⭐ 1 stars
+                </span>
+            </div>
+        </div>
+
+        <div class="repo-card">
+            <a href="https://github.com/waifuai/mcp-solana-internet" class="repo-title">mcp-solana-internet</a>
+
+            <a href="https://github.com/waifuai/mcp-solana-internet" class="repo-link">View Repository</a>
+
+            <p class="repo-description">Solana-based micropayment server using MCP. 💰 Facilitates direct SOL transfers
+                for resource access control via a Flask API. 🔑 Returns solana-action: URIs for unsigned transactions,
+                validated on-chain. ✅ Includes robust transaction checks, resource pricing, and basic access management.
+                🧪</p>
+
+            <div class="repo-meta">
+                <span class="language-badge" style="background-color: #3776ab; color: white;">
+                    Python
+                </span>
+                <span class="stars">
+                    ⭐ 1 stars
+                </span>
+            </div>
+        </div>
+
+        <div class="repo-card">
+            <a href="https://github.com/waifuai/mcp-traits-matcher" class="repo-title">mcp-traits-matcher</a>
+
+            <a href="https://github.com/waifuai/mcp-traits-matcher" class="repo-link">View Repository</a>
+
+            <p class="repo-description">Personality analysis server using the FastMCP framework. ✨ It manages persons
+                and traits in SQLite databases, enabling personality updates based on descriptions. 💻 Supports creating
+                persons/traits, and finding candidates matching a job description using Euclidean distance. 📐</p>
+
+            <div class="repo-meta">
+                <span class="language-badge" style="background-color: #3776ab; color: white;">
+                    Python
+                </span>
+                <span class="stars">
+                    ⭐ 1 stars
+                </span>
+            </div>
+        </div>
+
+        <div class="repo-card">
+            <a href="https://github.com/waifuai/mcp-waifu-chat" class="repo-title">mcp-waifu-chat</a>
+
+            <a href="https://github.com/waifuai/mcp-waifu-chat" class="repo-link">View Repository</a>
+
+            <p class="repo-description">FastMCP server for a conversational AI waifu. 🤖 Manages users, dialog history
+                (get/set/reset), and basic chat. 💬 Uses SQLite for persistence and includes comprehensive testing. ✅
+                Configuration via .env file supports custom AI model URL. 🌐 Modular design for extensions, currently
+                includes a mocked AI response function. 👍</p>
+
+            <div class="repo-meta">
+                <span class="language-badge" style="background-color: #3776ab; color: white;">
+                    Python
+                </span>
+                <span class="stars">
+                    ⭐ 1 stars
+                </span>
+            </div>
+        </div>
+
+        <div class="repo-card">
+            <a href="https://github.com/waifuai/mcp-waifu-queue" class="repo-title">mcp-waifu-queue</a>
+
+            <a href="https://github.com/waifuai/mcp-waifu-queue" class="repo-link">View Repository</a>
+
+            <p class="repo-description">Asynchronous text generation service built around the distilgpt2 model, exposing
+                an MCP-compliant API via FastMCP 🤖. It utilizes a Redis queue and worker setup for managing requests,
+                with GPU support for accelerated inference ⚡. Configuration is handled through environment variables,
+                ensuring flexibility and deployment readiness ⚙️.</p>
+
+            <div class="repo-meta">
+                <span class="language-badge" style="background-color: #3776ab; color: white;">
+                    Python
+                </span>
+                <span class="stars">
+                    ⭐ 1 stars
+                </span>
+            </div>
+        </div>
+
+        <div class="repo-card">
+            <a href="https://github.com/waifuai/paraphrase-back-translate"
+                class="repo-title">paraphrase-back-translate</a>
+
+            <a href="https://github.com/waifuai/paraphrase-back-translate" class="repo-link">View Repository</a>
+
+            <p class="repo-description">CLI tool for back-translation paraphrasing, leveraging Trax models.🔁 Supports
+                English and French, enabling multiple cycles of translation for paraphrase generation. 🔄 Manages
+                input/output files, model loading, and logging of progress via TensorBoard.📊 Includes a dummy
+                translation mode for testing.🧪 Has file handling, and custom logging. 📁</p>
+
+            <div class="repo-meta">
+                <span class="language-badge" style="background-color: #3776ab; color: white;">
+                    Python
+                </span>
+                <span class="stars">
+                    ⭐ 1 stars
+                </span>
+            </div>
+        </div>
+
+        <div class="repo-card">
+            <a href="https://github.com/waifuai/paraphrase-gan" class="repo-title">paraphrase-gan</a>
+
+            <a href="https://github.com/waifuai/paraphrase-gan" class="repo-link">View Repository</a>
+
+            <p class="repo-description">Trax-based GAN for paraphrase generation 🤖. Implements a continuous training
+                loop using Transformer models for generator and discriminator roles 🔁. Includes robust data
+                preparation, error handling, and logging 📝. Features initial model training with retries, and iterative
+                refinement of the generator 💡 based on discriminator feedback.</p>
+
+            <div class="repo-meta">
+                <span class="language-badge" style="background-color: #3776ab; color: white;">
+                    Python
+                </span>
+                <span class="stars">
+                    ⭐ 1 stars
+                </span>
+            </div>
+        </div>
+
+        <div class="repo-card">
+            <a href="https://github.com/waifuai/paraphrase-gan-utils" class="repo-title">paraphrase-gan-utils</a>
+
+            <a href="https://github.com/waifuai/paraphrase-gan-utils" class="repo-link">View Repository</a>
+
+            <p class="repo-description">This repository provides implementations for training Transformer models for
+                paraphrase generation. 📝 It supports both character-level and word-level models using the MS COCO
+                Captions dataset. 🖼️ Additionally, it includes multicore processing capabilities for the ParaBank
+                dataset, optimizing training efficiency. 🚀</p>
+
+            <div class="repo-meta">
+                <span class="language-badge" style="background-color: #3776ab; color: white;">
+                    Python
+                </span>
+                <span class="stars">
+                    ⭐ 1 stars
+                </span>
+            </div>
+        </div>
+
+        <div class="repo-card">
+            <a href="https://github.com/waifuai/paraphrase-human-sentence-classifier"
+                class="repo-title">paraphrase-human-sentence-classifier</a>
+
+            <a href="https://github.com/waifuai/paraphrase-human-sentence-classifier" class="repo-link">View
+                Repository</a>
+
+            <p class="repo-description">Deep learning classifier using Trax library to distinguish human-generated
+                sentences from machine-generated (paraphrased) ones. ✍️ Utilizes Transformer architecture with subword
+                or character tokenization. Data preparation via TSV files, training, and confusion matrix evaluation are
+                supported. ➕ Includes a training script using problem.py. ⚙️</p>
+
+            <div class="repo-meta">
+                <span class="language-badge" style="background-color: #3776ab; color: white;">
+                    Python
+                </span>
+                <span class="stars">
+                    ⭐ 1 stars
+                </span>
+            </div>
+        </div>
+
+        <div class="repo-card">
+            <a href="https://github.com/waifuai/paraphrase-neural-machine-translation"
+                class="repo-title">paraphrase-neural-machine-translation</a>
+
+            <a href="https://github.com/waifuai/paraphrase-neural-machine-translation" class="repo-link">View
+                Repository</a>
+
+            <p class="repo-description">Encoder-decoder NMT model for English paraphrase generation, using an
+                architecture with attention. 🚀 It leverages GRUs, and TensorFlow 2.x, trained on Parabank 100k. 💾
+                Includes modular code, efficient tf.data preprocessing, attention visualization, and TensorBoard
+                integration. 📈 The data processing filters, prepares and then tokenizes sentences.</p>
+
+            <div class="repo-meta">
+                <span class="language-badge" style="background-color: #3776ab; color: white;">
+                    Python
+                </span>
+                <span class="stars">
+                    ⭐ 1 stars
+                </span>
+            </div>
+        </div>
+
+        <div class="repo-card">
+            <a href="https://github.com/waifuai/quantum-circuit-optimization"
+                class="repo-title">quantum-circuit-optimization</a>
+
+            <a href="https://github.com/waifuai/quantum-circuit-optimization" class="repo-link">View Repository</a>
+
+            <p class="repo-description">Explores quantum circuit optimization using classical and quantum ML. Includes
+                data generation (Cirq circuits), and model training (TensorFlow DNNs, DCNs, and Trax Transformer for
+                seq2seq optimization). Focuses on hybrid classical-quantum approaches, combining DNNs with Cirq&#x27;s
+                optimizers.</p>
+
+            <div class="repo-meta">
+                <span class="language-badge" style="background-color: #3776ab; color: white;">
+                    Python
+                </span>
+                <span class="stars">
+                    ⭐ 1 stars
+                </span>
+            </div>
+        </div>
+
+        <div class="repo-card">
+            <a href="https://github.com/waifuai/ransoc" class="repo-title">ransoc</a>
+
+            <a href="https://github.com/waifuai/ransoc" class="repo-link">View Repository</a>
+
+            <p class="repo-description">Algorithm for balancing relevance and exploration in search. 👍 Dynamically
+                adjusts result weights based on user interaction, promoting less-prominent results without sacrificing
+                query relevance. 💯 Uses a gravitational analogy, conceptualizing search results as planets with masses.
+                🪐 Includes visualization tools for state. ✨</p>
+
+            <div class="repo-meta">
+                <span class="language-badge" style="background-color: #3776ab; color: white;">
+                    Python
+                </span>
+                <span class="stars">
+                    ⭐ 1 stars
+                </span>
+            </div>
+        </div>
+
+        <div class="repo-card">
+            <a href="https://github.com/waifuai/research-text" class="repo-title">research-text</a>
+
+            <a href="https://github.com/waifuai/research-text" class="repo-link">View Repository</a>
+
+            <p class="repo-description">Explores advanced concepts in quantum computing, tokenomics, and AI 🚀. Includes
+                implementations of bonding curves, agent-based simulations 💸, dynamic pricing, and multimodal data
+                handling 🧮, plus kinematic equations 💫, with an emphasis on formal mathematical models 🧪.</p>
+
+            <div class="repo-meta">
+                <span class="language-badge" style="background-color: #3776ab; color: white;">
+                    Python
+                </span>
+                <span class="stars">
+                    ⭐ 1 stars
+                </span>
+            </div>
+        </div>
+
+        <div class="repo-card">
+            <a href="https://github.com/waifuai/sim-affiliate" class="repo-title">sim-affiliate</a>
+
+            <a href="https://github.com/waifuai/sim-affiliate" class="repo-link">View Repository</a>
+
+            <p class="repo-description">Simulates a token economy with dynamic bonding curves (Linear, Exponential,
+                Sigmoid, Root, Inverse) and an affiliate system. Features automated curve switching, adjustable
+                affiliate commission rates (0-20%) 💰, and whale affiliates 🐳. Includes transaction fees, token
+                burns🔥, and detailed tracking of prices, supply, and earnings 📈.</p>
+
+            <div class="repo-meta">
+                <span class="language-badge" style="background-color: #3776ab; color: white;">
+                    Python
+                </span>
+                <span class="stars">
+                    ⭐ 1 stars
+                </span>
+            </div>
+        </div>
+
+        <div class="repo-card">
+            <a href="https://github.com/waifuai/sim-airdrop" class="repo-title">sim-airdrop</a>
+
+            <a href="https://github.com/waifuai/sim-airdrop" class="repo-link">View Repository</a>
+
+            <p class="repo-description">Simulator for diverse token airdrop strategies, evaluating impact on price and
+                supply. 🚀 Includes dynamic vesting (price-triggered, activity-based, linear) and market simulation with
+                user archetypes (HODLers, speculators). ⚖️ Features gas fees, whale detection, and token burning. 🔬
+                Analyzes tiered, lottery, and uniform distributions. 🎁</p>
+
+            <div class="repo-meta">
+                <span class="language-badge" style="background-color: #3776ab; color: white;">
+                    Python
+                </span>
+                <span class="stars">
+                    ⭐ 1 stars
+                </span>
+            </div>
+        </div>
+
+        <div class="repo-card">
+            <a href="https://github.com/waifuai/sim-bonding-curve" class="repo-title">sim-bonding-curve</a>
+
+            <a href="https://github.com/waifuai/sim-bonding-curve" class="repo-link">View Repository</a>
+
+            <p class="repo-description">Simulates tokenomics with autonomous agents interacting via various bonding
+                curves (linear, exponential, sigmoid, multi-segment). 💸 Agents trade based on price-trend analysis and
+                configurable strategies. 🧑‍💻 Includes parameter optimization (random search) to minimize price
+                volatility. 📈</p>
+
+            <div class="repo-meta">
+                <span class="language-badge" style="background-color: #3776ab; color: white;">
+                    Python
+                </span>
+                <span class="stars">
+                    ⭐ 1 stars
+                </span>
+            </div>
+        </div>
+
+        <div class="repo-card">
+            <a href="https://github.com/waifuai/sim-mcp-token" class="repo-title">sim-mcp-token</a>
+
+            <a href="https://github.com/waifuai/sim-mcp-token" class="repo-link">View Repository</a>
+
+            <p class="repo-description">Agent-based economic simulation exploring resource allocation, pricing, and
+                wealth distribution. 💰 Features autonomous agents, resource dynamics, and economic policies like taxes.
+                💸 Includes parameter experimentation (price elasticity, regen rates, taxes, expenses) and analysis
+                (Gini, bankruptcies). 📊</p>
+
+            <div class="repo-meta">
+                <span class="language-badge" style="background-color: #3776ab; color: white;">
+                    Python
+                </span>
+                <span class="stars">
+                    ⭐ 1 stars
+                </span>
+            </div>
+        </div>
+
+        <div class="repo-card">
+            <a href="https://github.com/waifuai/solana-ico" class="repo-title">solana-ico</a>
+
+            <a href="https://github.com/waifuai/solana-ico" class="repo-link">View Repository</a>
+
+            <p class="repo-description">CLI tool for Solana ICO management and interaction.🎁 Includes functions for
+                initializing ICOs, buying/selling tokens using a linear bonding curve, and managing an escrow. 🎉
+                Supports resource access control features. 🎊 Provides tokenomics info, balance checks, and SOL
+                transfers. 🎈 Uses PDAs for state management. 💯</p>
+
+            <div class="repo-meta">
+                <span class="language-badge" style="background-color: #3776ab; color: white;">
+                    Python
+                </span>
+                <span class="stars">
+                    ⭐ 1 stars
+                </span>
+            </div>
+        </div>
+
+        <div class="repo-card">
+            <a href="https://github.com/waifuai/street-lines" class="repo-title">street-lines</a>
+
+            <a href="https://github.com/waifuai/street-lines" class="repo-link">View Repository</a>
+
+            <p class="repo-description">Generates parking rectangles along a street segment. 📐 Input: bounding box
+                coordinates. Output: GeoJSON of rectangles. Uses local Cartesian (ENU) projection, rotation, and
+                geographic normalization (WGS 84). 🌍 Includes error analysis, derivation, and validation. ✨ Implements
+                CLI for coordinate input. 💻</p>
+
+            <div class="repo-meta">
+                <span class="language-badge" style="background-color: #3776ab; color: white;">
+                    Python
+                </span>
+                <span class="stars">
+                    ⭐ 1 stars
+                </span>
+            </div>
+        </div>
+
+        <div class="repo-card">
+            <a href="https://github.com/waifuai/traits" class="repo-title">traits</a>
+
+            <a href="https://github.com/waifuai/traits" class="repo-link">View Repository</a>
+
+            <p class="repo-description">CLI tool for personality-based candidate matching. 🧑‍💼 Analyzes job
+                descriptions and person profiles using trait-based weighted averages and Euclidean distance. 📏 Features
+                dynamic personality updates and database storage for traits (friendliness, dominance) and persons. 💾
+                Includes CLI for creating/listing traits, persons, and matching company💼</p>
+
+            <div class="repo-meta">
+                <span class="language-badge" style="background-color: #3776ab; color: white;">
+                    Python
+                </span>
+                <span class="stars">
+                    ⭐ 1 stars
+                </span>
+            </div>
+        </div>
+
+        <div class="repo-card">
+            <a href="https://github.com/waifuai/waifu-chat-api" class="repo-title">waifu-chat-api</a>
+
+            <a href="https://github.com/waifuai/waifu-chat-api" class="repo-link">View Repository</a>
+
+            <p class="repo-description">Flask API for a conversational AI &quot;Waifu&quot; character. 🤖 Supports user
+                &amp; dialog management, and server status checks. 📡 Features include creating, reading, updating,
+                deleting users &amp; dialog. 💾 Implements dialog history as JSON or string. 💬 Dialog conversion
+                utilities using regex are included. 🔄</p>
+
+            <div class="repo-meta">
+                <span class="language-badge" style="background-color: #3776ab; color: white;">
+                    Python
+                </span>
+                <span class="stars">
+                    ⭐ 1 stars
+                </span>
+            </div>
+        </div>
+
+        <div class="repo-card">
+            <a href="https://github.com/waifuai/waifu-llm-vrm" class="repo-title">waifu-llm-vrm</a>
+
+            <a href="https://github.com/waifuai/waifu-llm-vrm" class="repo-link">View Repository</a>
+
+            <p class="repo-description">Establishes Python-Godot communication for controlling AI characters. 🚀
+                Implements a basic chatbot framework and provides classes for character and VRM model management. 🎉
+                Includes methods for sending commands, handling events, playing animations, and setting expressions. 🎭
+                Supports two way communication via sockets or godot-rl. 🔗</p>
+
+            <div class="repo-meta">
+                <span class="language-badge" style="background-color: #3776ab; color: white;">
+                    Python
+                </span>
+                <span class="stars">
+                    ⭐ 1 stars
+                </span>
+            </div>
+        </div>
+
+        <div class="repo-card">
+            <a href="https://github.com/waifuai/web-apps" class="repo-title">web-apps</a>
+
+            <a href="https://github.com/waifuai/web-apps" class="repo-link">View Repository</a>
+
+            <p class="repo-description">Collection of interactive web apps focused on advanced topics. Includes
+                simulations for tokenomics, bonding curves, quantum computing, AI agents, and the Orch-OR theory🎉.
+                Features Solana ecosystem tools, and decentralized science applications✨. Also explores concepts like
+                superintelligence, string theory, and consciousness💖.</p>
+
+            <div class="repo-meta">
+                <span class="language-badge" style="background-color: #3776ab; color: white;">
+                    Python
+                </span>
+                <span class="stars">
+                    ⭐ 1 stars
+                </span>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>

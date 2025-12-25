@@ -1,0 +1,553 @@
+<style>
+    .lang-blog {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        line-height: 1.8;
+        color: #333;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .lang-blog h2 {
+        color: #2c3e50;
+        border-bottom: 3px solid #3498db;
+        padding-bottom: 10px;
+        margin-top: 40px;
+    }
+
+    .lang-blog h3 {
+        color: #34495e;
+        margin-top: 30px;
+    }
+
+    .lang-blog p {
+        margin: 15px 0;
+        text-align: justify;
+    }
+
+    .lang-blog .intro {
+        font-size: 1.1em;
+        color: #555;
+        background: linear-gradient(135deg, #f5f7fa 0%, #e4e8ec 100%);
+        padding: 20px;
+        border-radius: 10px;
+        border-left: 5px solid #3498db;
+    }
+
+    .lang-blog .highlight-box {
+        background: #fff3cd;
+        padding: 15px 20px;
+        border-radius: 8px;
+        border-left: 4px solid #ffc107;
+        margin: 20px 0;
+    }
+
+    .lang-blog .info-box {
+        background: #d1ecf1;
+        padding: 15px 20px;
+        border-radius: 8px;
+        border-left: 4px solid #17a2b8;
+        margin: 20px 0;
+    }
+
+    .lang-blog .family-card {
+        background: #fff;
+        border: 1px solid #e0e0e0;
+        border-radius: 12px;
+        padding: 20px;
+        margin: 15px 0;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    }
+
+    .lang-blog .family-card h4 {
+        margin: 0 0 12px 0;
+        color: #2980b9;
+        font-size: 1.15em;
+    }
+
+    .lang-blog .family-card .emoji {
+        font-size: 1.5em;
+        margin-right: 8px;
+    }
+
+    .lang-blog .lang-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 10px;
+    }
+
+    .lang-blog .lang-tag {
+        background: #ecf0f1;
+        padding: 4px 12px;
+        border-radius: 20px;
+        font-size: 0.85em;
+        color: #555;
+    }
+
+    .lang-blog .lang-tag.native {
+        background: #d5f5e3;
+        color: #1e8449;
+        font-weight: 600;
+    }
+
+    .lang-blog .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 15px;
+        margin: 25px 0;
+    }
+
+    .lang-blog .stat-box {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 20px;
+        border-radius: 12px;
+        text-align: center;
+    }
+
+    .lang-blog .stat-box .number {
+        font-size: 2.5em;
+        font-weight: bold;
+        display: block;
+    }
+
+    .lang-blog .stat-box .label {
+        font-size: 0.9em;
+        opacity: 0.9;
+    }
+
+    .lang-blog table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 20px 0;
+        font-size: 0.9em;
+    }
+
+    .lang-blog th {
+        background: #3498db;
+        color: white;
+        padding: 12px 15px;
+        text-align: left;
+    }
+
+    .lang-blog td {
+        padding: 10px 15px;
+        border-bottom: 1px solid #eee;
+    }
+
+    .lang-blog tr:hover {
+        background: #f8f9fa;
+    }
+
+    .lang-blog .tonal-tag {
+        background: #ffe6e6;
+        color: #c0392b;
+        padding: 2px 8px;
+        border-radius: 4px;
+        font-size: 0.8em;
+    }
+
+    .lang-blog .phonetic-note {
+        font-style: italic;
+        color: #666;
+        font-size: 0.95em;
+    }
+
+    .lang-blog blockquote {
+        border-left: 4px solid #9b59b6;
+        padding-left: 20px;
+        margin: 20px 0;
+        color: #666;
+        font-style: italic;
+        background: #faf5ff;
+        padding: 15px 20px;
+        border-radius: 0 8px 8px 0;
+    }
+</style>
+
+<div class="lang-blog">
+
+    <p class="intro">
+        With 193 supported languages in our animated chatbot, understanding linguistic relationships has become
+        essential. As AI improves in language ability, there's tremendous opportunity to benefit from deep linguistic
+        knowledge. Here's a comprehensive guide to the languages we support and how they relate to each other
+        phonetically.
+    </p>
+
+    <div class="stats-grid">
+        <div class="stat-box">
+            <span class="number">193</span>
+            <span class="label">Supported Languages</span>
+        </div>
+        <div class="stat-box">
+            <span class="number">12</span>
+            <span class="label">Native TTS Voices</span>
+        </div>
+        <div class="stat-box">
+            <span class="number">20+</span>
+            <span class="label">Language Families</span>
+        </div>
+        <div class="stat-box">
+            <span class="number">~50</span>
+            <span class="label">Tonal Languages</span>
+        </div>
+    </div>
+
+    <h2>🎤 Languages with Native Voice Support</h2>
+
+    <p>Our text-to-speech system provides native female voices for these 12 languages, which serve as the foundation for
+        all voice output:</p>
+
+    <table>
+        <tr>
+            <th>Language</th>
+            <th>Voice ID</th>
+            <th>Region/Variant</th>
+        </tr>
+        <tr>
+            <td>🇺🇸 English</td>
+            <td>en-female</td>
+            <td>United States</td>
+        </tr>
+        <tr>
+            <td>🇯🇵 Japanese</td>
+            <td>ja-female</td>
+            <td>Japan</td>
+        </tr>
+        <tr>
+            <td>🇩🇪 German</td>
+            <td>de-female</td>
+            <td>Germany</td>
+        </tr>
+        <tr>
+            <td>🇧🇷 Portuguese</td>
+            <td>pt-female</td>
+            <td>Brazil</td>
+        </tr>
+        <tr>
+            <td>🇪🇸 Spanish</td>
+            <td>es-female</td>
+            <td>Spain</td>
+        </tr>
+        <tr>
+            <td>🇫🇷 French</td>
+            <td>fr-female</td>
+            <td>France</td>
+        </tr>
+        <tr>
+            <td>🇨🇳 Chinese (Simplified)</td>
+            <td>zh-female</td>
+            <td>Mainland China</td>
+        </tr>
+        <tr>
+            <td>🇹🇼 Chinese (Traditional)</td>
+            <td>zh-tw-female</td>
+            <td>Taiwan</td>
+        </tr>
+        <tr>
+            <td>🇵🇭 Filipino (Tagalog)</td>
+            <td>tl-female</td>
+            <td>Philippines</td>
+        </tr>
+        <tr>
+            <td>🇮🇹 Italian</td>
+            <td>it-female</td>
+            <td>Italy</td>
+        </tr>
+        <tr>
+            <td>🇷🇺 Russian</td>
+            <td>ru-female</td>
+            <td>Russia</td>
+        </tr>
+        <tr>
+            <td>🇮🇳 Hindi</td>
+            <td>hi-female</td>
+            <td>India</td>
+        </tr>
+    </table>
+
+    <h2>🌳 Language Families & Phonetic Mapping</h2>
+
+    <p>For the 181 languages without native voices, we use <strong>phonetic mapping</strong> to select the most
+        natural-sounding fallback voice based on linguistic relationships.</p>
+
+    <div class="family-card">
+        <h4><span class="emoji">🏝️</span> Austronesian Languages → Filipino Voice</h4>
+        <p class="phonetic-note">These languages share vowel-heavy phonology, syllable-timed rhythm, and similar
+            phonotactic patterns with Filipino.</p>
+        <div class="lang-list">
+            <span class="lang-tag native">Filipino/Tagalog</span>
+            <span class="lang-tag">Indonesian</span>
+            <span class="lang-tag">Malay</span>
+            <span class="lang-tag">Javanese</span>
+            <span class="lang-tag">Sundanese</span>
+            <span class="lang-tag">Cebuano</span>
+            <span class="lang-tag">Hiligaynon</span>
+            <span class="lang-tag">Ilocano</span>
+            <span class="lang-tag">Balinese</span>
+            <span class="lang-tag">Malagasy</span>
+            <span class="lang-tag">Hawaiian</span>
+            <span class="lang-tag">Samoan</span>
+            <span class="lang-tag">Maori</span>
+            <span class="lang-tag">Fijian</span>
+        </div>
+    </div>
+
+    <div class="family-card">
+        <h4><span class="emoji">🏔️</span> Slavic & Post-Soviet Languages → Russian Voice</h4>
+        <p class="phonetic-note">Shared Cyrillic heritage, similar consonant clusters, and palatalization patterns make
+            Russian an ideal fallback.</p>
+        <div class="lang-list">
+            <span class="lang-tag native">Russian</span>
+            <span class="lang-tag">Ukrainian</span>
+            <span class="lang-tag">Belarusian</span>
+            <span class="lang-tag">Bulgarian</span>
+            <span class="lang-tag">Serbian</span>
+            <span class="lang-tag">Croatian</span>
+            <span class="lang-tag">Macedonian</span>
+            <span class="lang-tag">Kazakh</span>
+            <span class="lang-tag">Uzbek</span>
+            <span class="lang-tag">Kyrgyz</span>
+            <span class="lang-tag">Mongolian</span>
+            <span class="lang-tag">Tajik</span>
+            <span class="lang-tag">Georgian</span>
+            <span class="lang-tag">Armenian</span>
+        </div>
+    </div>
+
+    <div class="family-card">
+        <h4><span class="emoji">🐉</span> Sino-Tibetan & Tonal SE Asian → Chinese Voice</h4>
+        <p class="phonetic-note">These languages share tonal systems, monosyllabic tendencies, and similar prosodic
+            patterns. <span class="tonal-tag">Tonal</span></p>
+        <div class="lang-list">
+            <span class="lang-tag native">Chinese (Simplified)</span>
+            <span class="lang-tag native">Chinese (Traditional)</span>
+            <span class="lang-tag">Cantonese</span>
+            <span class="lang-tag">Vietnamese</span>
+            <span class="lang-tag">Thai</span>
+            <span class="lang-tag">Lao</span>
+            <span class="lang-tag">Burmese</span>
+            <span class="lang-tag">Khmer</span>
+            <span class="lang-tag">Dzongkha</span>
+            <span class="lang-tag">Hmong</span>
+        </div>
+    </div>
+
+    <div class="family-card">
+        <h4><span class="emoji">🕌</span> Indo-Aryan & South Asian → Hindi Voice</h4>
+        <p class="phonetic-note">Shared retroflex consonants, aspirated stops, and similar vowel inventories across the
+            Indian subcontinent.</p>
+        <div class="lang-list">
+            <span class="lang-tag native">Hindi</span>
+            <span class="lang-tag">Bengali</span>
+            <span class="lang-tag">Urdu</span>
+            <span class="lang-tag">Punjabi</span>
+            <span class="lang-tag">Gujarati</span>
+            <span class="lang-tag">Marathi</span>
+            <span class="lang-tag">Nepali</span>
+            <span class="lang-tag">Sinhala</span>
+            <span class="lang-tag">Tamil</span>
+            <span class="lang-tag">Telugu</span>
+            <span class="lang-tag">Kannada</span>
+            <span class="lang-tag">Malayalam</span>
+            <span class="lang-tag">Odia</span>
+            <span class="lang-tag">Sanskrit</span>
+        </div>
+    </div>
+
+    <div class="family-card">
+        <h4><span class="emoji">💃</span> Romance Languages → Spanish/French/Italian/Portuguese</h4>
+        <p class="phonetic-note">Descended from Latin, these languages share vowel systems, rhythm patterns, and similar
+            phoneme inventories.</p>
+        <div class="lang-list">
+            <span class="lang-tag native">Spanish</span>
+            <span class="lang-tag native">French</span>
+            <span class="lang-tag native">Italian</span>
+            <span class="lang-tag native">Portuguese</span>
+            <span class="lang-tag">Catalan → Spanish</span>
+            <span class="lang-tag">Galician → Spanish</span>
+            <span class="lang-tag">Romanian → Italian</span>
+            <span class="lang-tag">Occitan → French</span>
+            <span class="lang-tag">Sicilian → Italian</span>
+            <span class="lang-tag">Latin → Italian</span>
+            <span class="lang-tag">Haitian Creole → French</span>
+        </div>
+    </div>
+
+    <div class="family-card">
+        <h4><span class="emoji">🏰</span> Germanic Languages → German/English</h4>
+        <p class="phonetic-note">Continental Germanic languages map to German; North Germanic and Celtic languages map
+            to English for prosodic similarity.</p>
+        <div class="lang-list">
+            <span class="lang-tag native">German</span>
+            <span class="lang-tag native">English</span>
+            <span class="lang-tag">Dutch → German</span>
+            <span class="lang-tag">Afrikaans → German</span>
+            <span class="lang-tag">Yiddish → German</span>
+            <span class="lang-tag">Swedish → English</span>
+            <span class="lang-tag">Norwegian → English</span>
+            <span class="lang-tag">Danish → English</span>
+            <span class="lang-tag">Icelandic → English</span>
+            <span class="lang-tag">Welsh → English</span>
+            <span class="lang-tag">Irish → English</span>
+        </div>
+    </div>
+
+    <h2>🎯 Special Phonetic Considerations</h2>
+
+    <div class="highlight-box">
+        <strong>🎵 Tonal Languages:</strong> Languages like Thai, Vietnamese, and Cantonese use pitch to distinguish
+        meaning. We map these to Chinese, which also uses tones, for more natural-sounding output.
+    </div>
+
+    <div class="info-box">
+        <strong>🔤 Script Doesn't Equal Sound:</strong> Many languages share scripts but have very different
+        phonologies. We prioritize phonetic similarity over writing system when choosing fallback voices.
+    </div>
+
+    <h3>Interesting Phonetic Relationships</h3>
+
+    <table>
+        <tr>
+            <th>Language</th>
+            <th>Maps To</th>
+            <th>Why?</th>
+        </tr>
+        <tr>
+            <td>Korean</td>
+            <td>Japanese</td>
+            <td>Similar vowel inventory (a, i, u, e, o), mora-timed rhythm, geographic proximity</td>
+        </tr>
+        <tr>
+            <td>Greek</td>
+            <td>Italian</td>
+            <td>Mediterranean phonetic features, similar vowel clarity</td>
+        </tr>
+        <tr>
+            <td>Polish, Czech, Slovak</td>
+            <td>German</td>
+            <td>Geographic proximity, shared consonant features despite being Slavic</td>
+        </tr>
+        <tr>
+            <td>Basque</td>
+            <td>Spanish</td>
+            <td>Language isolate, but centuries of contact with Spanish speakers</td>
+        </tr>
+        <tr>
+            <td>Finnish, Hungarian</td>
+            <td>English</td>
+            <td>Uralic languages with no close TTS voice available; English as neutral fallback</td>
+        </tr>
+        <tr>
+            <td>Quechua, Aymara</td>
+            <td>Spanish</td>
+            <td>Indigenous languages heavily influenced by Spanish colonization</td>
+        </tr>
+    </table>
+
+    <h2>🌍 Language Diversity Statistics</h2>
+
+    <p>Here's a breakdown of the language families represented in our 193-language support:</p>
+
+    <table>
+        <tr>
+            <th>Language Family</th>
+            <th>Count</th>
+            <th>Example Languages</th>
+        </tr>
+        <tr>
+            <td>Indo-European</td>
+            <td>~80</td>
+            <td>English, Hindi, Russian, Spanish, Greek, Persian</td>
+        </tr>
+        <tr>
+            <td>Sino-Tibetan</td>
+            <td>~10</td>
+            <td>Chinese, Burmese, Tibetan</td>
+        </tr>
+        <tr>
+            <td>Austronesian</td>
+            <td>~25</td>
+            <td>Indonesian, Filipino, Maori, Hawaiian</td>
+        </tr>
+        <tr>
+            <td>Afroasiatic</td>
+            <td>~15</td>
+            <td>Arabic, Hebrew, Amharic, Hausa</td>
+        </tr>
+        <tr>
+            <td>Niger-Congo (Bantu)</td>
+            <td>~20</td>
+            <td>Swahili, Zulu, Yoruba, Igbo</td>
+        </tr>
+        <tr>
+            <td>Turkic</td>
+            <td>~10</td>
+            <td>Turkish, Kazakh, Uzbek, Azerbaijani</td>
+        </tr>
+        <tr>
+            <td>Uralic</td>
+            <td>~5</td>
+            <td>Finnish, Hungarian, Estonian</td>
+        </tr>
+        <tr>
+            <td>Dravidian</td>
+            <td>~4</td>
+            <td>Tamil, Telugu, Kannada, Malayalam</td>
+        </tr>
+        <tr>
+            <td>Japonic</td>
+            <td>1</td>
+            <td>Japanese</td>
+        </tr>
+        <tr>
+            <td>Koreanic</td>
+            <td>1</td>
+            <td>Korean</td>
+        </tr>
+        <tr>
+            <td>Language Isolates</td>
+            <td>~5</td>
+            <td>Basque, Korean (sometimes classified)</td>
+        </tr>
+        <tr>
+            <td>Others</td>
+            <td>~17</td>
+            <td>Various smaller families</td>
+        </tr>
+    </table>
+
+    <h2>💡 Why Phonetic Mapping Matters</h2>
+
+    <blockquote>
+        "The goal isn't perfect pronunciation—it's intelligible, natural-sounding speech. A Filipino voice speaking
+        Indonesian sounds far more natural than an English voice attempting the same, even if neither is perfect."
+    </blockquote>
+
+    <p>When AI speaks a language without a native voice, the fallback voice determines:</p>
+    <ul>
+        <li><strong>Vowel quality</strong> – How naturally vowels sound</li>
+        <li><strong>Rhythm and stress</strong> – Whether the speech feels natural or robotic</li>
+        <li><strong>Consonant approximation</strong> – How close unfamiliar sounds get to the target</li>
+        <li><strong>Overall intelligibility</strong> – Whether listeners can understand the output</li>
+    </ul>
+
+    <p>By carefully mapping each language to its phonetically closest available voice, we ensure the best possible
+        listening experience across all 193 supported languages.</p>
+
+    <h2>🚀 Future Improvements</h2>
+
+    <p>As TTS technology advances, we're looking forward to:</p>
+    <ul>
+        <li>Adding native voices for more languages (Arabic, Korean, and Turkish are top priorities)</li>
+        <li>Improving phonetic mappings based on user feedback</li>
+        <li>Supporting regional variants (e.g., Latin American Spanish vs. European Spanish)</li>
+        <li>Better handling of code-switching and multilingual text</li>
+    </ul>
+
+    <div class="info-box">
+        <strong>📝 Note:</strong> This system is designed for our Live2D animated chatbot. The voice mappings are
+        optimized for conversational AI responses and may differ from traditional TTS applications.
+    </div>
+
+</div>
