@@ -1,53 +1,31 @@
 ## Top Featured Projects (by Likes)
 | Project | Description | Views | Likes |
 |---------|-------------|-------|-------|
-| [Infinite Backrooms](https://websim.com/p/egdopl9nz84hzobulyfw) | ai generated backrooms, voice options are at the bottom of the screen so you
-                can ... | 1998 | 58 |
-| [animated chatbot live2d](https://websim.com/p/zix54kss8b0c3bs0jgmx) | Your interactive animated companion awaits! 💖 Chat with AI 💬, stream anime
-                music ... | 962 | 41 |
-| [Waifu Collector](https://websim.com/p/w1_qzykg8aiy33ltg9e6) | Engage in exciting turn-based battles ⚔️ in the Waifu Collector Battle Arena!
-                Wat... | 1208 | 38 |
-| [cat maze](https://websim.com/p/ihv_wdb3ml28ym674a93) | collect all 🐟, use 🤿 to cross 💧 and use 🥾 to cross 🔥, 🔑 unlocks 🚪,
-                reach the exit... | 755 | 34 |
-| [Advanced Equation Editor](https://websim.com/p/bt3gt7nwr7r7ct80_93d) | Interactive equation editor ➕➖➗. Type or use LaTeX, copy in LaTeX, MathML, or
-                Asc... | 345 | 17 |
-| [Anime Waifu Chatbot](https://websim.com/p/l_nxytirzupugycr5sk0) | Chat with a customizable anime waifu! 💬✨ Describe your ideal waifu to
-                generate an... | 1466 | 16 |
-| [Video Gallery](https://websim.com/p/21tsi_0jc61xx478svgz) | Browse videos in a neat gallery ✨. Tap thumbnails to watch them ▶️. Filter by
-                lan... | 694 | 15 |
+| [Infinite Backrooms](https://websim.com/p/egdopl9nz84hzobulyfw) | ai generated backrooms, voice options are at the bottom of the screen so you                 can ... | 1998 | 58 |
+| [animated chatbot live2d](https://websim.com/p/zix54kss8b0c3bs0jgmx) | Your interactive animated companion awaits! 💖 Chat with AI 💬, stream anime                 music ... | 962 | 41 |
+| [Waifu Collector](https://websim.com/p/w1_qzykg8aiy33ltg9e6) | Engage in exciting turn-based battles ⚔️ in the Waifu Collector Battle Arena!                 Wat... | 1208 | 38 |
+| [cat maze](https://websim.com/p/ihv_wdb3ml28ym674a93) | collect all 🐟, use 🤿 to cross 💧 and use 🥾 to cross 🔥, 🔑 unlocks 🚪,                 reach the exit... | 755 | 34 |
+| [Advanced Equation Editor](https://websim.com/p/bt3gt7nwr7r7ct80_93d) | Interactive equation editor ➕➖➗. Type or use LaTeX, copy in LaTeX, MathML, or                 Asc... | 345 | 17 |
+| [Anime Waifu Chatbot](https://websim.com/p/l_nxytirzupugycr5sk0) | Chat with a customizable anime waifu! 💬✨ Describe your ideal waifu to                 generate an... | 1466 | 16 |
+| [Video Gallery](https://websim.com/p/21tsi_0jc61xx478svgz) | Browse videos in a neat gallery ✨. Tap thumbnails to watch them ▶️. Filter by                 lan... | 694 | 15 |
 | [Infinite AI Tech Tree](https://websim.com/p/497vutj48h9hq3dvfhq3) |  | 337 | 13 |
-| [Websim Profile Card Generator](https://websim.com/p/esd3mxmqmbt8tpz5d4bi) | View your unique Websim profile card! ✨ AI crafts a custom banner 🖼️,
-                status, abi... | 231 | 13 |
-| [visual novel](https://websim.com/p/y12bs4ti0icj66v42icx) | Experience a delightful Ghibli-esque visual novel ✨. Interact by clicking
-                dialogu... | 274 | 11 |
-| [Waifu Chat Simulator](https://websim.com/p/va23vine2hb9r5zv8j8t) | It's a fun, interactive chat simulator! 💬 Choose a waifu personality
-                (Tsundere, Y... | 289 | 7 |
-| [TokenomicsChat 2 - Secure Communication for Crypto Enthusiasts](https://websim.com/p/iq8d1dd_gii_89wbgtno) | A crypto-themed chat app 💬. Users can send messages, see a list of active
-                users, ... | 111 | 6 |
-| [Waifu AI RPG](https://websim.com/p/20uqf4na_w0dh994aabq) | infinite rpg. known bugs: when using fallback for the text the tts is
-                mismatched ... | 77 | 5 |
-| [MCP Architecture Diagram Generator](https://websim.com/p/3q9m8qcyfjif18mhfvl5) | Type a software architecture description ✍️, click "Generate
-                Diagram" 🖱️, and see... | 30 | 5 |
-| [Profile](https://websim.com/p/5lipoik4gq5rfi4lpuc2) | View user profile on websim.ai 👤. See profile stats (views, likes) 📊, and
-                browse ... | 442 | 4 |
-| [Crypto AI Arena - Live Simulation Feed with Charts](https://websim.com/p/k_p6kv47srd8xh_e60aa) | Real-time Crypto AI simulation! 🤖 Watch AI agents compete on Ethereum,
-                Cardano & ... | 61 | 4 |
+| [Websim Profile Card Generator](https://websim.com/p/esd3mxmqmbt8tpz5d4bi) | View your unique Websim profile card! ✨ AI crafts a custom banner 🖼️,                 status, abi... | 231 | 13 |
+| [visual novel](https://websim.com/p/y12bs4ti0icj66v42icx) | Experience a delightful Ghibli-esque visual novel ✨. Interact by clicking                 dialogu... | 274 | 11 |
+| [Waifu Chat Simulator](https://websim.com/p/va23vine2hb9r5zv8j8t) | It's a fun, interactive chat simulator! 💬 Choose a waifu personality                 (Tsundere, Y... | 289 | 7 |
+| [TokenomicsChat 2 - Secure Communication for Crypto Enthusiasts](https://websim.com/p/iq8d1dd_gii_89wbgtno) | A crypto-themed chat app 💬. Users can send messages, see a list of active                 users, ... | 111 | 6 |
+| [Waifu AI RPG](https://websim.com/p/20uqf4na_w0dh994aabq) | infinite rpg. known bugs: when using fallback for the text the tts is                 mismatched ... | 77 | 5 |
+| [MCP Architecture Diagram Generator](https://websim.com/p/3q9m8qcyfjif18mhfvl5) | Type a software architecture description ✍️, click "Generate                 Diagram" 🖱️, and see... | 30 | 5 |
+| [Profile](https://websim.com/p/5lipoik4gq5rfi4lpuc2) | View user profile on websim.ai 👤. See profile stats (views, likes) 📊, and                 browse ... | 442 | 4 |
+| [Crypto AI Arena - Live Simulation Feed with Charts](https://websim.com/p/k_p6kv47srd8xh_e60aa) | Real-time Crypto AI simulation! 🤖 Watch AI agents compete on Ethereum,                 Cardano & ... | 61 | 4 |
 | [CatgirlChat - Your Anime Companion](https://websim.com/p/zs1_uiiavjnc0m98a0gz) |  | 1 | 4 |
 | [Websim Database 2.1 Documentation](https://websim.com/p/lr8pir3wc3esig80c5o3) |  | 17 | 3 |
 | [WebSim Metadata API Documentation](https://websim.com/p/k30oe5_pmbppmt183gyp) |  | 9 | 3 |
-| [Seam Carving App](https://websim.com/p/0ozdbeb_xebf0c_4f7k5) | Upload 🖼️ an image and interactively reduce its width and/or height using
-                sliders... | 6 | 3 |
-| [AI Waifu Chat Simulator](https://websim.com/p/s_rc5ipg9udfp1suw7fj) | Chat with an AI waifu! 💬 Type your message and see her respond. Her image,
-                dere t... | 298 | 3 |
-| [Digital Companion Waifu](https://websim.com/p/gt_lxa10q_z2lv3kos51) | Interact with a cute anime character! 🖼️ Choose from pre-set questions or
-                type yo... | 205 | 3 |
-| [Designing AI-Agent Compatible Web Services
-                s](https://websim.com/p/6antxsf84ewbecge77l0) | A blog post 📑 about designing AI-friendly web services. It features a
-                pulsing, cl... | 12 | 3 |
-| [Waifu Cursor](https://websim.com/p/_k46x2ehd_qj6ajgugaq) | Interactive webpage where your cursor is replaced by a cute waifu 🥰. Moving
-                the m... | 108 | 3 |
-| [AIAgentForge - Collaborative AI Agent Development Hub](https://websim.com/p/v79kcq47natfa4cw9q0w) | A collaborative AI agent development platform. 🤖 Users can chat, share code
-                snipp... | 25 | 3 |
+| [Seam Carving App](https://websim.com/p/0ozdbeb_xebf0c_4f7k5) | Upload 🖼️ an image and interactively reduce its width and/or height using                 sliders... | 6 | 3 |
+| [AI Waifu Chat Simulator](https://websim.com/p/s_rc5ipg9udfp1suw7fj) | Chat with an AI waifu! 💬 Type your message and see her respond. Her image,                 dere t... | 298 | 3 |
+| [Digital Companion Waifu](https://websim.com/p/gt_lxa10q_z2lv3kos51) | Interact with a cute anime character! 🖼️ Choose from pre-set questions or                 type yo... | 205 | 3 |
+| [Designing AI-Agent Compatible Web Services                 s](https://websim.com/p/6antxsf84ewbecge77l0) | A blog post 📑 about designing AI-friendly web services. It features a                 pulsing, cl... | 12 | 3 |
+| [Waifu Cursor](https://websim.com/p/_k46x2ehd_qj6ajgugaq) | Interactive webpage where your cursor is replaced by a cute waifu 🥰. Moving                 the m... | 108 | 3 |
+| [AIAgentForge - Collaborative AI Agent Development Hub](https://websim.com/p/v79kcq47natfa4cw9q0w) | A collaborative AI agent development platform. 🤖 Users can chat, share code                 snipp... | 25 | 3 |
 
 
 ## All Projects List (for manual categorization checks)
@@ -73,8 +51,7 @@
 - Seam Carving App (Likes: 3, Views: 6)
 - AI Waifu Chat Simulator (Likes: 3, Views: 298)
 - Digital Companion Waifu (Likes: 3, Views: 205)
-- Designing AI-Agent Compatible Web Services
-                s (Likes: 3, Views: 12)
+- Designing AI-Agent Compatible Web Services                 s (Likes: 3, Views: 12)
 - Waifu Cursor (Likes: 3, Views: 108)
 - AIAgentForge - Collaborative AI Agent Development Hub (Likes: 3, Views: 25)
 - CatgirlChat - Your Anime Companion (Likes: 3, Views: 332)
@@ -367,8 +344,7 @@
 - RANSOC Space Coverage Theorem Visualizer (Likes: 1, Views: 3)
 - RANSOC Visualization (Likes: 1, Views: 4)
 - The Tokenized Economy: A Mathematical Framework (Likes: 1, Views: 2)
-- TokenAffiliates Mathematical Model Visualization
-                style (Likes: 1, Views: 4)
+- TokenAffiliates Mathematical Model Visualization                 style (Likes: 1, Views: 4)
 - Interactive Parking Rectangle Algorithm Visualization (Likes: 1, Views: 0)
 - Self-Healing AI Native OS (Likes: 1, Views: 4)
 - Research Text Analysis Interface (Likes: 1, Views: 7)
@@ -415,10 +391,8 @@
 - The Future of String Computing: Bridging Physics and Information Theory (Likes: 1, Views: 0)
 - Challenges in Implementing String Computing Hardware (Likes: 1, Views: 0)
 - Challenges in Implementing String Computing Hardware (Likes: 1, Views: 2)
-- Practical Applications: From Cryptography to Cosmological Simulations - String
-                Computing (Likes: 1, Views: 0)
-- Practical Applications: From Cryptography to Cosmological Simulations | String
-                Computing (Likes: 1, Views: 0)
+- Practical Applications: From Cryptography to Cosmological Simulations - String                 Computing (Likes: 1, Views: 0)
+- Practical Applications: From Cryptography to Cosmological Simulations | String                 Computing (Likes: 1, Views: 0)
 - Breaking the Planck Scale: Computational Limits and Possibilities (Likes: 1, Views: 2)
 - Holographic Principle and Information Storage | String Computing (Likes: 1, Views: 0)
 - Introduction to String Theory: From Physics to Computation (Likes: 1, Views: 0)
@@ -435,8 +409,7 @@
 - Quantum Support Vector Machines for Analyzing Microtubule Data (Likes: 1, Views: 1)
 - Quantum Computing: A Superior Framework for Understanding the Human Brain (Likes: 1, Views: 1)
 - Quantum Machine Learning: A New Frontier in Consciousness Studies (Likes: 1, Views: 2)
-- Quantum, Thermodynamic, and Neuromorphic Computing: Advanced Frameworks for
-                Understanding the Brain (Likes: 1, Views: 1)
+- Quantum, Thermodynamic, and Neuromorphic Computing: Advanced Frameworks for                 Understanding the Brain (Likes: 1, Views: 1)
 - Quantum LLM Benchmarks (Likes: 1, Views: 1)
 - Optimizing Microtubule Coherence: Advanced Techniques (Likes: 1, Views: 1)
 - Quantum Microtubules: Frontier Research Topics (Likes: 1, Views: 2)
@@ -604,8 +577,7 @@
 - Extropic AI - Quantum-Inspired AI Symposium (Likes: 1, Views: 0)
 - Extropic AI - Research Collaborations (Likes: 1, Views: 0)
 - Extropic AI - Thermodynamic Computing Revolution (Likes: 1, Views: 0)
-- Towards Quantum Supremacy in AI: A Comparative Study of Superconducting and
-                Quantum Computing Approaches (Likes: 1, Views: 1)
+- Towards Quantum Supremacy in AI: A Comparative Study of Superconducting and                 Quantum Computing Approaches (Likes: 1, Views: 1)
 - Extropic AI - Research Publications (Likes: 1, Views: 2)
 - Extropic AI - Revolutionizing Scientific Computing (Likes: 1, Views: 0)
 - Extropic AI - Revolutionary Applications in Quantitative Finance (Likes: 1, Views: 2)
@@ -664,8 +636,7 @@
 - Medication Tracker (Likes: 0, Views: 0)
 - Internet of Protocols (IoP) Visualization (Likes: 0, Views: 0)
 - ChatWorld - An Interactive Online Adventure (Likes: 0, Views: 0)
-- Personality Matching System
-                styl (Likes: 0, Views: 0)
+- Personality Matching System                 styl (Likes: 0, Views: 0)
 - SleepyTime Calculator (Likes: 0, Views: 0)
 - Quantum Multimodal LLM Visualizer (Likes: 0, Views: 0)
 - Economic Considerations: Simulating and Creating Consciousnessstyl (Likes: 0, Views: 0)

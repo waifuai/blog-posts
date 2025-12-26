@@ -42,7 +42,7 @@ def parse_projects(file_path):
                     date = text.replace('📅', '').strip()
 
         projects.append({
-            'title': title,
+            'title': title.replace('\n', ' ').replace('\r', ''),
             'description': desc,
             'link': link,
             'views': views,
@@ -62,8 +62,8 @@ def generate_markdown(projects):
     
     # Top 25
     for p in sorted_projects[:25]:
-        # Escape pipes in description
-        desc = p['description'].replace('|', '\|')
+        # Escape pipes in description and remove newlines
+        desc = p['description'].replace('|', '\|').replace('\n', ' ').replace('\r', '')
         # Truncate description if too long
         if len(desc) > 100:
             desc = desc[:97] + "..."
@@ -74,8 +74,8 @@ def generate_markdown(projects):
         print(f"- {p['title']} (Likes: {p['likes']}, Views: {p['views']})")
 
 if __name__ == "__main__":
-    file_path = "src/06-websim-projects.html"
-    output_path = "project_data.md"
+    file_path = "html/06-websim-projects.html"
+    output_path = "src/project_data.md"
     try:
         projects = parse_projects(file_path)
         # Capture output to file
