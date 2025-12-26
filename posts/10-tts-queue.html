@@ -1,0 +1,529 @@
+<title>TTS Queue Management: Making AI Speech Sound Natural</title>
+<style>
+    .tts-blog {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        line-height: 1.8;
+        color: #333;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .tts-blog h2 {
+        color: #2c3e50;
+        border-bottom: 3px solid #9b59b6;
+        padding-bottom: 10px;
+        margin-top: 40px;
+    }
+
+    .tts-blog h3 {
+        color: #34495e;
+        margin-top: 30px;
+    }
+
+    .tts-blog p {
+        margin: 15px 0;
+        text-align: justify;
+    }
+
+    .tts-blog .intro {
+        font-size: 1.1em;
+        color: #555;
+        background: linear-gradient(135deg, #f5f0ff 0%, #ede7f6 100%);
+        padding: 20px;
+        border-radius: 10px;
+        border-left: 5px solid #9b59b6;
+    }
+
+    .tts-blog .code-block {
+        background: #1e1e1e;
+        color: #d4d4d4;
+        padding: 20px;
+        border-radius: 8px;
+        overflow-x: auto;
+        font-family: 'Consolas', 'Monaco', monospace;
+        font-size: 0.9em;
+        margin: 20px 0;
+    }
+
+    .tts-blog .code-block .comment {
+        color: #6a9955;
+    }
+
+    .tts-blog .code-block .keyword {
+        color: #569cd6;
+    }
+
+    .tts-blog .code-block .string {
+        color: #ce9178;
+    }
+
+    .tts-blog .code-block .function {
+        color: #dcdcaa;
+    }
+
+    .tts-blog .highlight-box {
+        background: #fff3cd;
+        padding: 15px 20px;
+        border-radius: 8px;
+        border-left: 4px solid #ffc107;
+        margin: 20px 0;
+    }
+
+    .tts-blog .info-box {
+        background: #d1ecf1;
+        padding: 15px 20px;
+        border-radius: 8px;
+        border-left: 4px solid #17a2b8;
+        margin: 20px 0;
+    }
+
+    .tts-blog .success-box {
+        background: #d4edda;
+        padding: 15px 20px;
+        border-radius: 8px;
+        border-left: 4px solid #28a745;
+        margin: 20px 0;
+    }
+
+    .tts-blog .danger-box {
+        background: #f8d7da;
+        padding: 15px 20px;
+        border-radius: 8px;
+        border-left: 4px solid #dc3545;
+        margin: 20px 0;
+    }
+
+    .tts-blog .flow-diagram {
+        background: #f8f9fa;
+        padding: 25px;
+        border-radius: 12px;
+        margin: 25px 0;
+        text-align: center;
+    }
+
+    .tts-blog .flow-step {
+        display: inline-block;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 12px 20px;
+        border-radius: 25px;
+        margin: 5px;
+        font-weight: 600;
+    }
+
+    .tts-blog .flow-arrow {
+        display: inline-block;
+        color: #9b59b6;
+        font-size: 1.5em;
+        margin: 0 10px;
+        vertical-align: middle;
+    }
+
+    .tts-blog .feature-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 15px;
+        margin: 25px 0;
+    }
+
+    .tts-blog .feature-card {
+        background: white;
+        border: 1px solid #e0e0e0;
+        border-radius: 12px;
+        padding: 20px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    }
+
+    .tts-blog .feature-card h4 {
+        margin: 0 0 10px 0;
+        color: #9b59b6;
+    }
+
+    .tts-blog .feature-card .emoji {
+        font-size: 2em;
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    .tts-blog table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 20px 0;
+        font-size: 0.9em;
+    }
+
+    .tts-blog th {
+        background: #9b59b6;
+        color: white;
+        padding: 12px 15px;
+        text-align: left;
+    }
+
+    .tts-blog td {
+        padding: 10px 15px;
+        border-bottom: 1px solid #eee;
+    }
+
+    .tts-blog tr:hover {
+        background: #f8f9fa;
+    }
+
+    .tts-blog blockquote {
+        border-left: 4px solid #3498db;
+        padding-left: 20px;
+        margin: 20px 0;
+        color: #666;
+        font-style: italic;
+        background: #f0f8ff;
+        padding: 15px 20px;
+        border-radius: 0 8px 8px 0;
+    }
+
+    .tts-blog .timeline {
+        position: relative;
+        padding-left: 30px;
+        margin: 25px 0;
+    }
+
+    .tts-blog .timeline::before {
+        content: '';
+        position: absolute;
+        left: 8px;
+        top: 0;
+        bottom: 0;
+        width: 3px;
+        background: #9b59b6;
+    }
+
+    .tts-blog .timeline-item {
+        position: relative;
+        margin-bottom: 25px;
+    }
+
+    .tts-blog .timeline-item::before {
+        content: '';
+        position: absolute;
+        left: -26px;
+        top: 5px;
+        width: 14px;
+        height: 14px;
+        background: #9b59b6;
+        border-radius: 50%;
+        border: 3px solid white;
+        box-shadow: 0 0 0 2px #9b59b6;
+    }
+
+    .tts-blog .timeline-item h4 {
+        margin: 0 0 8px 0;
+        color: #2c3e50;
+    }
+</style>
+
+<div class="tts-blog">
+
+    <p class="intro">
+        When your AI companion speaks, there's a lot happening behind the scenes. Text-to-speech might seem simple—text
+        goes in, audio comes out—but making it sound <em>natural</em> requires sophisticated queue management,
+        intelligent chunking, and graceful error handling. Here's a deep dive into how we make AI speech seamless.
+    </p>
+
+    <h2>🎯 The Challenge</h2>
+
+    <p>When a user asks the AI a question, the response might be several paragraphs long. Playing this as one massive
+        audio file creates problems:</p>
+
+    <div class="feature-grid">
+        <div class="feature-card">
+            <span class="emoji">⏳</span>
+            <h4>Long Wait Times</h4>
+            <p>Users would wait 10+ seconds before hearing anything while the entire response is synthesized.</p>
+        </div>
+        <div class="feature-card">
+            <span class="emoji">💥</span>
+            <h4>API Limits</h4>
+            <p>TTS services have character limits (often 300-500 chars). Long text simply fails.</p>
+        </div>
+        <div class="feature-card">
+            <span class="emoji">🔄</span>
+            <h4>No Recovery</h4>
+            <p>If playback fails halfway, you'd have to restart from the beginning.</p>
+        </div>
+        <div class="feature-card">
+            <span class="emoji">🤖</span>
+            <h4>Robotic Feel</h4>
+            <p>Without natural pauses, AI speech sounds mechanical and exhausting to listen to.</p>
+        </div>
+    </div>
+
+    <h2>🏗️ The Architecture</h2>
+
+    <p>Our TTS system is split into three specialized modules:</p>
+
+    <div class="flow-diagram">
+        <span class="flow-step">📝 Queue Manager</span>
+        <span class="flow-arrow">→</span>
+        <span class="flow-step">⚡ Preloader</span>
+        <span class="flow-arrow">→</span>
+        <span class="flow-step">🔊 Audio Player</span>
+    </div>
+
+    <table>
+        <tr>
+            <th>Module</th>
+            <th>File</th>
+            <th>Responsibility</th>
+        </tr>
+        <tr>
+            <td><strong>Queue Manager</strong></td>
+            <td>tts_queue_manager.js</td>
+            <td>Splits text into chunks, manages playback order, handles pause/resume</td>
+        </tr>
+        <tr>
+            <td><strong>Preloader</strong></td>
+            <td>audio_preloader.js</td>
+            <td>Fetches and caches the <em>next</em> audio chunk while current one plays</td>
+        </tr>
+        <tr>
+            <td><strong>Audio Player</strong></td>
+            <td>audio_player.js</td>
+            <td>Plays audio, syncs lip movements, handles retries and text splitting</td>
+        </tr>
+    </table>
+
+    <h2>📦 Step 1: Intelligent Chunking</h2>
+
+    <p>The first challenge is breaking text into playable chunks. We don't just split at arbitrary character limits—we
+        split at <strong>natural sentence boundaries</strong> and then group sentences into chunks:</p>
+
+    <div class="code-block">
+        <span class="comment">// Group sentences into chunks based on character limit</span><br>
+        <span class="keyword">const</span> chunks = [];<br>
+        <span class="keyword">const</span> limit = window.ttsChunkLimit || <span class="string">300</span>;<br><br>
+
+        sentences.<span class="function">forEach</span>((sentence, idx) => {<br>
+        &nbsp;&nbsp;<span class="keyword">if</span> (currentChunk.text.length + sentence.length > limit) {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;chunks.<span class="function">push</span>(currentChunk); <span class="comment">// Save
+            current chunk</span><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;currentChunk = { text: sentence, indices: [idx] }; <span class="comment">// Start
+            new</span><br>
+        &nbsp;&nbsp;} <span class="keyword">else</span> {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;currentChunk.text += <span class="string">' '</span> + sentence;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;currentChunk.indices.<span class="function">push</span>(idx);<br>
+        &nbsp;&nbsp;}<br>
+        });
+    </div>
+
+    <div class="info-box">
+        <strong>💡 Why group sentences?</strong> Making one API call for "Hello. How are you?" is more efficient than
+        two separate calls—fewer network requests, less latency, and the TTS can apply natural prosody across the full
+        phrase.
+    </div>
+
+    <h2>⚡ Step 2: Preloading Magic</h2>
+
+    <p>The secret to seamless playback is <strong>preloading</strong>. While chunk #1 plays, we're already fetching
+        chunk #2 in the background:</p>
+
+    <div class="timeline">
+        <div class="timeline-item">
+            <h4>T=0s: Start playing Chunk 1</h4>
+            <p>Audio begins immediately. User hears "Hello! I'm your AI companion..."</p>
+        </div>
+        <div class="timeline-item">
+            <h4>T=0.1s: Begin preloading Chunk 2</h4>
+            <p>While chunk 1 plays, we silently fetch chunk 2's audio in the background.</p>
+        </div>
+        <div class="timeline-item">
+            <h4>T=2s: Chunk 1 finishes, Chunk 2 already cached</h4>
+            <p>Zero delay—chunk 2 starts instantly from cache. Meanwhile, chunk 3 begins preloading.</p>
+        </div>
+        <div class="timeline-item">
+            <h4>T=4s: Continue until complete</h4>
+            <p>Each chunk starts with near-zero latency because it was preloaded during the previous chunk.</p>
+        </div>
+    </div>
+
+    <div class="code-block">
+        <span class="comment">// Inside the playback loop</span><br>
+        <span class="keyword">const</span> preloaded = <span class="keyword">await</span> TTSPreloader.<span
+            class="function">getPreloadedBuffer</span>(i, chunkText, voiceId);<br><br>
+
+        <span class="comment">// Start preloading NEXT chunk immediately</span><br>
+        <span class="keyword">if</span> (i + 1 < chunks.length) {<br>
+            &nbsp;&nbsp;TTSPreloader.<span class="function">preloadNext</span>(i + 1, chunks[i+1].text, voiceId);<br>
+            }<br><br>
+
+            <span class="keyword">await</span> <span class="function">tryPlaySingleChunk</span>(chunkText, voiceId, 0,
+            preloaded);
+    </div>
+
+    <div class="success-box">
+        <strong>✨ Result:</strong> Instead of a noticeable pause between every sentence, playback feels continuous and
+        natural—just like a real person speaking.
+    </div>
+
+    <h2>🔄 Step 3: Error Recovery</h2>
+
+    <p>Network errors happen. Rate limits get hit. Long text fails. Our system handles all of these gracefully:</p>
+
+    <h3>Rate Limit Handling (HTTP 429)</h3>
+
+    <p>When the TTS API returns a rate limit error, we don't crash—we pause gracefully and show a retry button:</p>
+
+    <div class="code-block">
+        <span class="keyword">if</span> (err.status === <span class="string">429</span>) {<br>
+        &nbsp;&nbsp;<span class="function">debugLog</span>(<span class="string">"Rate limit hit. Pausing
+            playback."</span>, <span class="string">"warn"</span>);<br>
+        &nbsp;&nbsp;<span class="function">showRetryTTSButton</span>(messageId, chunk.indices[0], languageCode);<br>
+        &nbsp;&nbsp;isCurrentlySpeaking = <span class="keyword">false</span>;<br>
+        &nbsp;&nbsp;ttsCancelled = <span class="keyword">true</span>;<br>
+        &nbsp;&nbsp;<span class="keyword">return</span>; <span class="comment">// Stop cleanly, keep queue
+            intact</span><br>
+        }
+    </div>
+
+    <h3>Text Too Long? Split It!</h3>
+
+    <p>Sometimes even our chunks exceed the API limit. Instead of failing, we recursively split the chunk at natural
+        word boundaries:</p>
+
+    <div class="code-block">
+        <span class="keyword">if</span> (err.message.includes(<span class="string">"text too long"</span>)) {<br>
+        &nbsp;&nbsp;<span class="keyword">const</span> halfPoint = Math.<span
+            class="function">floor</span>(textChunk.length / 2);<br>
+        &nbsp;&nbsp;<span class="keyword">let</span> splitPoint = textChunk.<span
+            class="function">lastIndexOf</span>(<span class="string">' '</span>, halfPoint);<br><br>
+        &nbsp;&nbsp;<span class="keyword">const</span> firstHalf = textChunk.<span class="function">substring</span>(0,
+        splitPoint);<br>
+        &nbsp;&nbsp;<span class="keyword">const</span> secondHalf = textChunk.<span
+            class="function">substring</span>(splitPoint).trim();<br><br>
+        &nbsp;&nbsp;<span class="keyword">await</span> <span class="function">tryPlaySingleChunk</span>(firstHalf,
+        voiceId, attempt + 1);<br>
+        &nbsp;&nbsp;<span class="keyword">await</span> <span class="function">tryPlaySingleChunk</span>(secondHalf,
+        voiceId, attempt + 1);<br>
+        }
+    </div>
+
+    <div class="highlight-box">
+        <strong>⚠️ Safety Limit:</strong> We cap recursive splits at 5 attempts. If text still fails after being split
+        32 times, something's seriously wrong and we skip it.
+    </div>
+
+    <h2>👄 Step 4: Lip Sync Integration</h2>
+
+    <p>The magic really happens when TTS connects to the Live2D avatar. We use Web Audio API's AnalyserNode to extract
+        real-time audio amplitude:</p>
+
+    <div class="code-block">
+        <span class="keyword">const</span> <span class="function">updateMouth</span> = () => {<br>
+        &nbsp;&nbsp;analyserNode.<span class="function">getByteFrequencyData</span>(dataArray);<br>
+        &nbsp;&nbsp;<span class="keyword">const</span> vocalRange = dataArray.<span class="function">slice</span>(10,
+        100); <span class="comment">// Human voice frequencies</span><br>
+        &nbsp;&nbsp;<span class="keyword">const</span> volume = vocalRange.<span class="function">reduce</span>((a, v)
+        => a + v) / vocalRange.length;<br><br>
+        &nbsp;&nbsp;<span class="comment">// Smooth the animation to prevent jittering</span><br>
+        &nbsp;&nbsp;<span class="keyword">const</span> smoothed = lastVolume + (volume - lastVolume) * 0.3;<br><br>
+        &nbsp;&nbsp;<span class="comment">// Apply to Live2D model</span><br>
+        &nbsp;&nbsp;model.<span class="function">setParameterValueById</span>(<span
+            class="string">"ParamMouthOpenY"</span>, smoothed * 1.5);<br>
+        &nbsp;&nbsp;model.<span class="function">setParameterValueById</span>(<span
+            class="string">"ParamMouthForm"</span>, smoothed * 0.5 - 0.25);<br>
+        &nbsp;&nbsp;<span class="function">requestAnimationFrame</span>(updateMouth);<br>
+        };
+    </div>
+
+    <p>We specifically analyze frequencies 10-100 in the frequency data—this corresponds to the human voice range
+        (roughly 300-3000 Hz), filtering out background noise and music that might interfere.</p>
+
+    <h2>🎮 Step 5: User Controls</h2>
+
+    <p>Users need control over their AI's voice. We provide three actions:</p>
+
+    <table>
+        <tr>
+            <th>Action</th>
+            <th>Behavior</th>
+        </tr>
+        <tr>
+            <td><strong>▶️ Play</strong></td>
+            <td>Resume from where we left off, or start a new queued message</td>
+        </tr>
+        <tr>
+            <td><strong>⏸️ Pause</strong></td>
+            <td>Stop current audio but keep the queue intact for later</td>
+        </tr>
+        <tr>
+            <td><strong>⏹️ Stop</strong></td>
+            <td>Cancel everything—current audio, queue, and preloaded cache</td>
+        </tr>
+    </table>
+
+    <div class="code-block">
+        <span class="keyword">function</span> <span class="function">stopTTS</span>() {<br>
+        &nbsp;&nbsp;ttsCancelled = <span class="keyword">true</span>;<br>
+        &nbsp;&nbsp;ttsQueue = []; <span class="comment">// Clear pending messages</span><br>
+        &nbsp;&nbsp;TTSPreloader.<span class="function">clear</span>(); <span class="comment">// Clear preloaded
+            audio</span><br>
+        &nbsp;&nbsp;<span class="keyword">if</span> (window.currentAudio) {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;currentAudio.<span class="function">stop</span>();<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;currentAudio = <span class="keyword">null</span>;<br>
+        &nbsp;&nbsp;}<br>
+        &nbsp;&nbsp;isCurrentlySpeaking = <span class="keyword">false</span>;<br>
+        }
+    </div>
+
+    <h2>📊 Performance Metrics</h2>
+
+    <p>Here's what our optimizations achieve:</p>
+
+    <table>
+        <tr>
+            <th>Metric</th>
+            <th>Without Preloading</th>
+            <th>With Preloading</th>
+        </tr>
+        <tr>
+            <td>Time to first audio</td>
+            <td>~500ms</td>
+            <td>~500ms</td>
+        </tr>
+        <tr>
+            <td>Gap between chunks</td>
+            <td>400-800ms</td>
+            <td><strong>~0ms</strong></td>
+        </tr>
+        <tr>
+            <td>Perceived latency</td>
+            <td>High (noticeable pauses)</td>
+            <td><strong>None</strong></td>
+        </tr>
+        <tr>
+            <td>Error recovery</td>
+            <td>Full restart required</td>
+            <td><strong>Resume from sentence</strong></td>
+        </tr>
+    </table>
+
+    <h2>🎁 Key Takeaways</h2>
+
+    <blockquote>
+        "The best TTS system is one users don't notice. They should focus on <em>what</em> the AI is saying, not
+        <em>how</em> it's being delivered."
+    </blockquote>
+
+    <div class="success-box">
+        <strong>✅ Our approach:</strong>
+        <ul style="margin: 10px 0 0 0; padding-left: 20px;">
+            <li>Split text at natural sentence boundaries, not arbitrary character limits</li>
+            <li>Preload the next chunk while the current one plays</li>
+            <li>Handle rate limits gracefully with pause and resume</li>
+            <li>Split oversized chunks recursively instead of failing</li>
+            <li>Sync lip movements to audio amplitude in real-time</li>
+            <li>Add 150ms pauses between chunks for natural rhythm</li>
+        </ul>
+    </div>
+
+    <p>The result? Speech that flows naturally, recovers from errors gracefully, and keeps your AI companion feeling
+        alive and responsive. 🎙️</p>
+
+</div>

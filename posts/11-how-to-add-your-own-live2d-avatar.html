@@ -1,0 +1,482 @@
+<title>How to Add Your Own Live2D Avatar: A Complete Guide</title>
+<style>
+    .l2d-guide {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        line-height: 1.8;
+        color: #333;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .l2d-guide h2 {
+        color: #2c3e50;
+        border-bottom: 3px solid #e74c3c;
+        padding-bottom: 10px;
+        margin-top: 40px;
+    }
+
+    .l2d-guide h3 {
+        color: #34495e;
+        margin-top: 30px;
+    }
+
+    .l2d-guide p {
+        margin: 15px 0;
+    }
+
+    .l2d-guide .intro {
+        font-size: 1.1em;
+        color: #555;
+        background: linear-gradient(135deg, #fff5f5 0%, #ffe8e8 100%);
+        padding: 20px;
+        border-radius: 10px;
+        border-left: 5px solid #e74c3c;
+    }
+
+    .l2d-guide .step-box {
+        background: #f8f9fa;
+        border: 2px solid #e0e0e0;
+        border-radius: 12px;
+        padding: 25px;
+        margin: 25px 0;
+        position: relative;
+    }
+
+    .l2d-guide .step-box::before {
+        content: attr(data-step);
+        position: absolute;
+        top: -15px;
+        left: 20px;
+        background: #e74c3c;
+        color: white;
+        padding: 5px 15px;
+        border-radius: 20px;
+        font-weight: bold;
+    }
+
+    .l2d-guide .highlight-box {
+        background: #fff3cd;
+        padding: 15px 20px;
+        border-radius: 8px;
+        border-left: 4px solid #ffc107;
+        margin: 20px 0;
+    }
+
+    .l2d-guide .info-box {
+        background: #d1ecf1;
+        padding: 15px 20px;
+        border-radius: 8px;
+        border-left: 4px solid #17a2b8;
+        margin: 20px 0;
+    }
+
+    .l2d-guide .success-box {
+        background: #d4edda;
+        padding: 15px 20px;
+        border-radius: 8px;
+        border-left: 4px solid #28a745;
+        margin: 20px 0;
+    }
+
+    .l2d-guide .danger-box {
+        background: #f8d7da;
+        padding: 15px 20px;
+        border-radius: 8px;
+        border-left: 4px solid #dc3545;
+        margin: 20px 0;
+    }
+
+    .l2d-guide .file-tree {
+        background: #1e1e1e;
+        color: #d4d4d4;
+        padding: 20px;
+        border-radius: 8px;
+        font-family: 'Consolas', monospace;
+        font-size: 0.9em;
+        margin: 20px 0;
+    }
+
+    .l2d-guide .file-tree .folder {
+        color: #dcdcaa;
+    }
+
+    .l2d-guide .file-tree .file {
+        color: #9cdcfe;
+    }
+
+    .l2d-guide .file-tree .important {
+        color: #4ec9b0;
+        font-weight: bold;
+    }
+
+    .l2d-guide table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 20px 0;
+        font-size: 0.9em;
+    }
+
+    .l2d-guide th {
+        background: #e74c3c;
+        color: white;
+        padding: 12px 15px;
+        text-align: left;
+    }
+
+    .l2d-guide td {
+        padding: 10px 15px;
+        border-bottom: 1px solid #eee;
+    }
+
+    .l2d-guide tr:hover {
+        background: #f8f9fa;
+    }
+
+    .l2d-guide .source-card {
+        background: white;
+        border: 1px solid #e0e0e0;
+        border-radius: 12px;
+        padding: 20px;
+        margin: 15px 0;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    }
+
+    .l2d-guide .source-card h4 {
+        margin: 0 0 10px 0;
+        color: #e74c3c;
+    }
+
+    .l2d-guide .source-card a {
+        color: #3498db;
+        text-decoration: none;
+    }
+
+    .l2d-guide .source-card a:hover {
+        text-decoration: underline;
+    }
+
+    .l2d-guide .example-url {
+        background: #ecf0f1;
+        padding: 10px 15px;
+        border-radius: 6px;
+        font-family: 'Consolas', monospace;
+        font-size: 0.85em;
+        word-break: break-all;
+        margin: 10px 0;
+    }
+
+    .l2d-guide .checklist {
+        list-style: none;
+        padding: 0;
+    }
+
+    .l2d-guide .checklist li {
+        padding: 8px 0;
+        padding-left: 30px;
+        position: relative;
+    }
+
+    .l2d-guide .checklist li::before {
+        content: '-';
+        position: absolute;
+        left: 0;
+        color: #e74c3c;
+        font-size: 1.2em;
+    }
+
+    .l2d-guide .faq {
+        border-left: 3px solid #9b59b6;
+        padding-left: 20px;
+        margin: 20px 0;
+    }
+
+    .l2d-guide .faq h4 {
+        color: #9b59b6;
+        margin: 0 0 5px 0;
+    }
+
+    .l2d-guide .faq p {
+        margin: 0;
+        color: #666;
+    }
+</style>
+
+<div class="l2d-guide">
+
+    <p class="intro">
+        Want to use your own Live2D avatar instead of the default model? This guide walks you through everything you
+        need to know—from finding models to hosting them and adding them to the chatbot. No coding required!
+    </p>
+
+    <h2>📋 What You'll Need</h2>
+
+    <ul class="checklist">
+        <li>A Live2D Cubism 3.0+ model (not Cubism 2.x)</li>
+        <li>A place to host the model files (GitHub, your own server, etc.)</li>
+        <li>The direct URL to the .model3.json file</li>
+        <li>Optional: A thumbnail image URL for the model selector</li>
+    </ul>
+
+    <h2>🗂️ Understanding Live2D Model Files</h2>
+
+    <p>A Live2D model isn't just one file—it's a folder containing multiple files that work together:</p>
+
+    <div class="file-tree">
+        <span class="folder">📁 my_character/</span><br>
+        ├── <span class="important">my_character.model3.json</span> ← Main file (you need this URL!)<br>
+        ├── <span class="file">my_character.moc3</span> ← The actual 3D model data<br>
+        ├── <span class="file">my_character.physics3.json</span> ← Physics settings (hair bounce, etc.)<br>
+        ├── <span class="file">my_character.pose3.json</span> ← Pose/expression data<br>
+        ├── <span class="folder">📁 textures/</span><br>
+        │&nbsp;&nbsp;&nbsp;└── <span class="file">texture_00.png</span> ← Character textures<br>
+        └── <span class="folder">📁 motions/</span><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;├── <span class="file">idle.motion3.json</span><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;└── <span class="file">tap.motion3.json</span>
+    </div>
+
+    <div class="info-box">
+        <strong>💡 Key Point:</strong> The <code>.model3.json</code> file is the "entry point" that tells the system
+        where all the other files are. You only need to provide the URL to this file—it will automatically load
+        everything else.
+    </div>
+
+    <h2>🔍 Where to Find Live2D Models</h2>
+
+    <div class="source-card">
+        <h4>🎁 Free Models</h4>
+        <p><strong>Live2D Official Sample Models</strong><br>
+            <a href="https://www.live2d.com/en/download/sample-data/"
+                target="_blank">live2d.com/download/sample-data</a><br>
+            High-quality official samples. Great for testing!
+        </p>
+    </div>
+
+    <div class="source-card">
+        <h4>🎁 GitHub Repositories</h4>
+        <p><strong>Search for "live2d model3.json"</strong><br>
+            Many developers share their models on GitHub. Look for repositories with .model3.json files.<br>
+            <em>Tip: Use GitHub's raw file URLs for direct access.</em>
+        </p>
+    </div>
+
+    <div class="source-card">
+        <h4>💰 Commercial Models</h4>
+        <p><strong>Live2D Marketplace / Booth.pm / nizima</strong><br>
+            Professional artists sell custom models. If you purchase one, you'll get the full file package to host
+            yourself.</p>
+    </div>
+
+    <div class="source-card">
+        <h4>🎨 Create Your Own</h4>
+        <p><strong>Live2D Cubism Editor</strong><br>
+            <a href="https://www.live2d.com/en/download/cubism/" target="_blank">live2d.com/download/cubism</a><br>
+            Free version available! Create your own avatar from artwork.
+        </p>
+    </div>
+
+    <h2>🌐 Hosting Your Model</h2>
+
+    <p>The model files need to be hosted somewhere accessible via HTTPS. Here are your options:</p>
+
+    <table>
+        <tr>
+            <th>Option</th>
+            <th>Difficulty</th>
+            <th>Best For</th>
+        </tr>
+        <tr>
+            <td><strong>GitHub Pages</strong></td>
+            <td>Easy</td>
+            <td>Free, reliable, great for most users</td>
+        </tr>
+        <tr>
+            <td><strong>Your Own Server</strong></td>
+            <td>Medium</td>
+            <td>Full control, already have hosting</td>
+        </tr>
+        <tr>
+            <td><strong>CDN Services</strong></td>
+            <td>Easy</td>
+            <td>Fast loading, paid option</td>
+        </tr>
+        <tr>
+            <td><strong>Direct GitHub Raw</strong></td>
+            <td>Easiest</td>
+            <td>Quick testing (rate limited)</td>
+        </tr>
+    </table>
+
+    <div class="step-box" data-step="GitHub Hosting">
+        <h3 style="margin-top: 10px;">How to Host on GitHub (Recommended)</h3>
+        <ol>
+            <li><strong>Create a new repository</strong> on GitHub (or use an existing one)</li>
+            <li><strong>Upload your entire model folder</strong> (all files, maintaining structure)</li>
+            <li><strong>Enable GitHub Pages:</strong> Settings → Pages → Source: main branch</li>
+            <li><strong>Your URL will be:</strong></li>
+        </ol>
+        <div class="example-url">
+            https://YOUR-USERNAME.github.io/YOUR-REPO/my_character/my_character.model3.json
+        </div>
+        <p>Or use the raw file URL directly:</p>
+        <div class="example-url">
+            https://raw.githubusercontent.com/YOUR-USERNAME/YOUR-REPO/main/my_character/my_character.model3.json
+        </div>
+    </div>
+
+    <div class="highlight-box">
+        <strong>🔒 CORS Note:</strong> The hosting server must allow cross-origin requests. GitHub Pages and most CDNs
+        handle this automatically. If you're self-hosting, make sure to configure CORS headers.
+    </div>
+
+    <h2>➕ Adding Your Model to the Chatbot</h2>
+
+    <div class="step-box" data-step="Step 1">
+        <h3 style="margin-top: 10px;">Open Settings</h3>
+        <p>Click the <strong>⚙️ Settings</strong> gear icon to open the settings panel.</p>
+    </div>
+
+    <div class="step-box" data-step="Step 2">
+        <h3 style="margin-top: 10px;">Find "Add Custom Model"</h3>
+        <p>Scroll down to the <strong>🧩 Model Settings</strong> section. You'll see the "Add Custom Model" area with
+            three input fields.</p>
+    </div>
+
+    <div class="step-box" data-step="Step 3">
+        <h3 style="margin-top: 10px;">Fill in the Fields</h3>
+        <table>
+            <tr>
+                <th>Field</th>
+                <th>Required?</th>
+                <th>What to Enter</th>
+            </tr>
+            <tr>
+                <td><strong>Model Name</strong></td>
+                <td>Optional</td>
+                <td>A friendly name like "My Haru" (auto-detected from URL if blank)</td>
+            </tr>
+            <tr>
+                <td><strong>Model URL</strong></td>
+                <td>✅ Required</td>
+                <td>Direct URL to the .model3.json file</td>
+            </tr>
+            <tr>
+                <td><strong>Thumbnail URL</strong></td>
+                <td>Optional</td>
+                <td>URL to an image for the model selector</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="step-box" data-step="Step 4">
+        <h3 style="margin-top: 10px;">Click "Add Model"</h3>
+        <p>The model will immediately load and appear in your model selector. It's also saved to your browser—it'll be
+            there next time you visit!</p>
+    </div>
+
+    <div class="success-box">
+        <strong>✅ That's it!</strong> Your custom model is now loaded. You can switch between models anytime using the
+        model selector dropdown.
+    </div>
+
+    <h2>🔧 Troubleshooting</h2>
+
+    <div class="faq">
+        <h4>❌ "Model won't load" / Nothing happens</h4>
+        <p>Check the browser console (F12 → Console tab) for error messages. Common causes: wrong URL, CORS blocked,
+            missing files.</p>
+    </div>
+
+    <div class="faq">
+        <h4>❌ "URL must end with .model3.json"</h4>
+        <p>Make sure your URL ends exactly with <code>.model3.json</code>. Some URLs have query strings (like
+            <code>?token=xyz</code>)—that's fine, it just needs .model3.json before the <code>?</code>.
+        </p>
+    </div>
+
+    <div class="faq">
+        <h4>❌ Model loads but looks broken/distorted</h4>
+        <p>The model might be Cubism 2.x format (we only support 3.0+). Check if files are .moc3 (good) or just .moc
+            (old format).</p>
+    </div>
+
+    <div class="faq">
+        <h4>❌ "CORS error" or "blocked by CORS policy"</h4>
+        <p>The server hosting your files isn't allowing cross-origin requests. Use GitHub Pages, or if self-hosting, add
+            the header: <code>Access-Control-Allow-Origin: *</code></p>
+    </div>
+
+    <div class="faq">
+        <h4>❌ Textures are missing (model appears white/blank)</h4>
+        <p>The texture files weren't uploaded, or the paths in .model3.json don't match the actual file locations. Make
+            sure the entire folder structure is preserved.</p>
+    </div>
+
+    <div class="faq">
+        <h4>❌ Model doesn't lip-sync</h4>
+        <p>The model needs the parameter <code>ParamMouthOpenY</code> for lip sync to work. Some models use different
+            parameter names—without this specific parameter, lips won't move.</p>
+    </div>
+
+    <h2>✨ Pro Tips</h2>
+
+    <div class="info-box">
+        <strong>🎯 Multiple Models:</strong> You can add as many custom models as you want! Enable "Load multiple models
+        at once" in Preferences to display several models simultaneously.
+    </div>
+
+    <div class="info-box">
+        <strong>💾 Models are Saved:</strong> Custom models are stored in your browser's local storage. They persist
+        across sessions but are specific to that browser/device.
+    </div>
+
+    <div class="info-box">
+        <strong>🗑️ Removing Models:</strong> Select your custom model from the "Custom Models" dropdown, then click the
+        "Remove" button that appears below with the model info.
+    </div>
+
+    <h2>📐 Required Parameters for Full Functionality</h2>
+
+    <p>For the best experience, your model should have these Live2D parameters:</p>
+
+    <table>
+        <tr>
+            <th>Parameter</th>
+            <th>Used For</th>
+            <th>Required?</th>
+        </tr>
+        <tr>
+            <td><code>ParamMouthOpenY</code></td>
+            <td>Lip sync (mouth opening)</td>
+            <td>Yes, for speech</td>
+        </tr>
+        <tr>
+            <td><code>ParamMouthForm</code></td>
+            <td>Lip shape</td>
+            <td>Optional</td>
+        </tr>
+        <tr>
+            <td><code>ParamEyeLOpen</code> / <code>ParamEyeROpen</code></td>
+            <td>Blinking</td>
+            <td>Optional</td>
+        </tr>
+        <tr>
+            <td><code>ParamAngleX</code> / <code>Y</code> / <code>Z</code></td>
+            <td>Head rotation</td>
+            <td>Optional</td>
+        </tr>
+        <tr>
+            <td><code>ParamBodyAngleX</code></td>
+            <td>Body sway</td>
+            <td>Optional</td>
+        </tr>
+    </table>
+
+    <p>Most professionally-made models include these parameters. If you're creating your own, make sure to add at least
+        <code>ParamMouthOpenY</code>!
+    </p>
+
+    <h2>🎉 You're Ready!</h2>
+
+    <p>Now you know how to find, host, and add custom Live2D models to your AI companion. Go make it your own! 🎭</p>
+
+</div>

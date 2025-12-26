@@ -1,0 +1,712 @@
+<title>Building an Automated Image-to-Live2D Pipeline: A Developer's Guide</title>
+<style>
+    .dev-guide {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        line-height: 1.8;
+        color: #333;
+        max-width: 850px;
+        margin: 0 auto;
+    }
+
+    .dev-guide h2 {
+        color: #2c3e50;
+        border-bottom: 3px solid #27ae60;
+        padding-bottom: 10px;
+        margin-top: 40px;
+    }
+
+    .dev-guide h3 {
+        color: #34495e;
+        margin-top: 30px;
+    }
+
+    .dev-guide p {
+        margin: 15px 0;
+    }
+
+    .dev-guide .intro {
+        font-size: 1.1em;
+        color: #555;
+        background: linear-gradient(135deg, #e8f8f0 0%, #d5f5e3 100%);
+        padding: 20px;
+        border-radius: 10px;
+        border-left: 5px solid #27ae60;
+    }
+
+    .dev-guide code {
+        background: #f4f4f4;
+        padding: 2px 6px;
+        border-radius: 4px;
+        font-family: 'Consolas', 'Monaco', monospace;
+        font-size: 0.9em;
+    }
+
+    .dev-guide pre {
+        background: #1e1e1e;
+        color: #d4d4d4;
+        padding: 20px;
+        border-radius: 8px;
+        overflow-x: auto;
+        font-family: 'Consolas', 'Monaco', monospace;
+        font-size: 0.85em;
+        margin: 20px 0;
+        line-height: 1.6;
+    }
+
+    .dev-guide pre .comment {
+        color: #6a9955;
+    }
+
+    .dev-guide pre .keyword {
+        color: #569cd6;
+    }
+
+    .dev-guide pre .string {
+        color: #ce9178;
+    }
+
+    .dev-guide pre .function {
+        color: #dcdcaa;
+    }
+
+    .dev-guide .pipeline-step {
+        background: #f8f9fa;
+        border-left: 4px solid #27ae60;
+        padding: 20px;
+        margin: 25px 0;
+        border-radius: 0 8px 8px 0;
+    }
+
+    .dev-guide .pipeline-step h4 {
+        margin: 0 0 10px 0;
+        color: #27ae60;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .dev-guide .pipeline-step .step-num {
+        background: #27ae60;
+        color: white;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        font-size: 0.9em;
+    }
+
+    .dev-guide .highlight-box {
+        background: #fff3cd;
+        padding: 15px 20px;
+        border-radius: 8px;
+        border-left: 4px solid #ffc107;
+        margin: 20px 0;
+    }
+
+    .dev-guide .info-box {
+        background: #d1ecf1;
+        padding: 15px 20px;
+        border-radius: 8px;
+        border-left: 4px solid #17a2b8;
+        margin: 20px 0;
+    }
+
+    .dev-guide .success-box {
+        background: #d4edda;
+        padding: 15px 20px;
+        border-radius: 8px;
+        border-left: 4px solid #28a745;
+        margin: 20px 0;
+    }
+
+    .dev-guide .danger-box {
+        background: #f8d7da;
+        padding: 15px 20px;
+        border-radius: 8px;
+        border-left: 4px solid #dc3545;
+        margin: 20px 0;
+    }
+
+    .dev-guide table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 20px 0;
+        font-size: 0.9em;
+    }
+
+    .dev-guide th {
+        background: #27ae60;
+        color: white;
+        padding: 12px 15px;
+        text-align: left;
+    }
+
+    .dev-guide td {
+        padding: 10px 15px;
+        border-bottom: 1px solid #eee;
+    }
+
+    .dev-guide tr:hover {
+        background: #f8f9fa;
+    }
+
+    .dev-guide .arch-diagram {
+        background: #2c3e50;
+        color: white;
+        padding: 25px;
+        border-radius: 12px;
+        margin: 25px 0;
+        text-align: center;
+    }
+
+    .dev-guide .arch-box {
+        display: inline-block;
+        background: #27ae60;
+        padding: 12px 20px;
+        border-radius: 8px;
+        margin: 5px;
+        font-weight: 600;
+    }
+
+    .dev-guide .arch-arrow {
+        display: inline-block;
+        color: #95a5a6;
+        margin: 0 10px;
+        font-size: 1.5em;
+    }
+
+    .dev-guide .model-card {
+        background: white;
+        border: 1px solid #e0e0e0;
+        border-radius: 10px;
+        padding: 15px 20px;
+        margin: 15px 0;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+    }
+
+    .dev-guide .model-card h5 {
+        margin: 0 0 8px 0;
+        color: #27ae60;
+    }
+
+    .dev-guide .model-card a {
+        color: #3498db;
+        text-decoration: none;
+    }
+
+    .dev-guide .model-card a:hover {
+        text-decoration: underline;
+    }
+
+    .dev-guide .file-structure {
+        background: #1e1e1e;
+        color: #d4d4d4;
+        padding: 20px;
+        border-radius: 8px;
+        font-family: 'Consolas', monospace;
+        font-size: 0.9em;
+        margin: 20px 0;
+    }
+
+    .dev-guide .file-structure .folder {
+        color: #dcdcaa;
+    }
+
+    .dev-guide .file-structure .file {
+        color: #9cdcfe;
+    }
+
+    .dev-guide .file-structure .generated {
+        color: #4ec9b0;
+    }
+</style>
+
+<div class="dev-guide">
+
+    <p class="intro">
+        <strong>For Developers:</strong> This guide provides a technical blueprint for building an automated
+        image-to-Live2D conversion pipeline. We'll cover the AI models, file formats, and integration strategies needed
+        to turn a single character image into a fully rigged, interactive Live2D model.
+    </p>
+
+    <h2>🏗️ Pipeline Architecture Overview</h2>
+
+    <p>The complete pipeline consists of 6 stages, each requiring specific AI models or algorithms:</p>
+
+    <div class="arch-diagram">
+        <span class="arch-box">📷 Input Image</span>
+        <span class="arch-arrow">→</span>
+        <span class="arch-box">🔪 Segmentation</span>
+        <span class="arch-arrow">→</span>
+        <span class="arch-box">🎨 Inpainting</span>
+        <span class="arch-arrow">→</span>
+        <span class="arch-box">🕸️ Mesh Gen</span>
+        <span class="arch-arrow">→</span>
+        <span class="arch-box">⚙️ Rigging</span>
+        <span class="arch-arrow">→</span>
+        <span class="arch-box">📦 Export</span>
+    </div>
+
+    <table>
+        <tr>
+            <th>Stage</th>
+            <th>Input</th>
+            <th>Output</th>
+            <th>AI/Algorithm</th>
+        </tr>
+        <tr>
+            <td>1. Segmentation</td>
+            <td>Single image</td>
+            <td>Layer masks</td>
+            <td>Semantic segmentation (UNet, ISNet)</td>
+        </tr>
+        <tr>
+            <td>2. Inpainting</td>
+            <td>Layer masks + image</td>
+            <td>Complete layers (RGBA)</td>
+            <td>Diffusion inpainting, amodal completion</td>
+        </tr>
+        <tr>
+            <td>3. Mesh Generation</td>
+            <td>RGBA layers</td>
+            <td>Triangulated meshes</td>
+            <td>Delaunay triangulation, edge detection</td>
+        </tr>
+        <tr>
+            <td>4. Deformer Setup</td>
+            <td>Meshes</td>
+            <td>Warp/rotation deformers</td>
+            <td>Template matching, pose estimation</td>
+        </tr>
+        <tr>
+            <td>5. Parameter Binding</td>
+            <td>Deformers</td>
+            <td>Keyform animations</td>
+            <td>Predefined templates or AI prediction</td>
+        </tr>
+        <tr>
+            <td>6. Export</td>
+            <td>All above</td>
+            <td>.model3.json + .moc3</td>
+            <td>Live2D Cubism SDK</td>
+        </tr>
+    </table>
+
+    <h2>Stage 1: Semantic Segmentation</h2>
+
+    <p>The first step is splitting the character image into semantic parts: face, hair, eyes, eyebrows, mouth, body,
+        clothes, accessories.</p>
+
+    <div class="pipeline-step">
+        <h4><span class="step-num">1</span> Choose a Segmentation Model</h4>
+
+        <div class="model-card">
+            <h5>SkyTNT/anime-segmentation</h5>
+            <p>High-accuracy anime character segmentation using ISNet. Trained on combined datasets for robust
+                performance.</p>
+            <p><a href="https://github.com/SkyTNT/anime-segmentation"
+                    target="_blank">github.com/SkyTNT/anime-segmentation</a></p>
+        </div>
+
+        <div class="model-card">
+            <h5>siyeong0/Anime-Face-Segmentation</h5>
+            <p>UNet-based model specifically for anime faces. Classes: background, hair, eye, mouth, face, skin,
+                clothes.</p>
+            <p><a href="https://github.com/siyeong0/Anime-Face-Segmentation"
+                    target="_blank">github.com/siyeong0/Anime-Face-Segmentation</a></p>
+        </div>
+
+        <div class="model-card">
+            <h5>Hugging Face: skytnt/anime-segmentation</h5>
+            <p>Pre-trained models and datasets ready for inference or fine-tuning.</p>
+            <p><a href="https://huggingface.co/skytnt/anime-segmentation"
+                    target="_blank">huggingface.co/skytnt/anime-segmentation</a></p>
+        </div>
+    </div>
+
+    <pre>
+<span class="comment"># Example: Anime segmentation with ISNet</span>
+<span class="keyword">from</span> anime_segmentation <span class="keyword">import</span> get_model
+
+model = get_model(<span class="string">"isnet_anime"</span>)
+masks = model.predict(image)  <span class="comment"># Returns dict of layer masks</span>
+
+<span class="comment"># Expected output layers:</span>
+<span class="comment"># - "face": mask for face area</span>
+<span class="comment"># - "hair": mask for hair (may be multiple: front_hair, back_hair)</span>
+<span class="comment"># - "left_eye", "right_eye": individual eye masks</span>
+<span class="comment"># - "mouth": mouth/lips area</span>
+<span class="comment"># - "body": torso and limbs</span>
+<span class="comment"># - "clothes": outfit layers</span>
+</pre>
+
+    <div class="highlight-box">
+        <strong>💡 Key Challenge:</strong> Standard models often output body-part masks but NOT the depth ordering. You
+        need to determine which layers go in front (e.g., front hair over face, face over back hair). This can be
+        heuristic-based or learned from training data.
+    </div>
+
+    <h2>Stage 2: Amodal Inpainting</h2>
+
+    <p>Each layer mask defines a visible region, but Live2D layers need the COMPLETE part—including areas hidden behind
+        other layers. This is called "amodal completion."</p>
+
+    <div class="pipeline-step">
+        <h4><span class="step-num">2</span> Fill in Occluded Regions</h4>
+
+        <div class="model-card">
+            <h5>Stable Diffusion Inpainting</h5>
+            <p>Use SD inpainting to fill masked regions. Works well for extending hair behind the face, completing eyes
+                behind bangs, etc.</p>
+            <p><a href="https://huggingface.co/runwayml/stable-diffusion-inpainting"
+                    target="_blank">huggingface.co/runwayml/stable-diffusion-inpainting</a></p>
+        </div>
+
+        <div class="model-card">
+            <h5>pix2gestalt (Amodal Completion)</h5>
+            <p>Latent diffusion model trained specifically for amodal completion—synthesizing full objects from
+                partially visible ones.</p>
+            <p><a href="https://github.com/cvlab-columbia/pix2gestalt"
+                    target="_blank">github.com/cvlab-columbia/pix2gestalt</a></p>
+        </div>
+
+        <div class="model-card">
+            <h5>LaMa (Large Mask Inpainting)</h5>
+            <p>Fast Fourier convolution-based inpainting. Great for large masked regions.</p>
+            <p><a href="https://github.com/advimman/lama" target="_blank">github.com/advimman/lama</a></p>
+        </div>
+    </div>
+
+    <pre>
+<span class="comment"># Example: Inpainting workflow</span>
+<span class="keyword">from</span> diffusers <span class="keyword">import</span> StableDiffusionInpaintPipeline
+
+pipe = StableDiffusionInpaintPipeline.from_pretrained(
+    <span class="string">"runwayml/stable-diffusion-inpainting"</span>
+)
+
+<span class="keyword">for</span> layer_name, mask <span class="keyword">in</span> masks.items():
+    <span class="comment"># Expand mask to include occluded regions that need filling</span>
+    occlusion_mask = compute_occlusion_mask(layer_name, all_masks)
+    
+    <span class="comment"># Inpaint the hidden parts</span>
+    completed_layer = pipe(
+        prompt=<span class="string">f"anime character {layer_name}, consistent style"</span>,
+        image=original_image,
+        mask_image=occlusion_mask
+    ).images[0]
+    
+    <span class="comment"># Extract layer with alpha channel</span>
+    rgba_layer = apply_alpha_mask(completed_layer, mask)
+    layers[layer_name] = rgba_layer
+</pre>
+
+    <div class="info-box">
+        <strong>🎯 Pro Tip:</strong> For anime hair, you typically need to inpaint 30-50% more area behind the face. Use
+        the face silhouette expanded by a margin as the inpainting mask for the hair layer.
+    </div>
+
+    <h2>Stage 3: Mesh Generation</h2>
+
+    <p>Each RGBA layer needs a deformable mesh. The mesh defines how the layer can be warped and animated.</p>
+
+    <div class="pipeline-step">
+        <h4><span class="step-num">3</span> Create Triangle Meshes</h4>
+        <p>Live2D uses triangulated meshes where vertices can be moved to deform the texture.</p>
+    </div>
+
+    <pre>
+<span class="comment"># Example: Mesh generation for a layer</span>
+<span class="keyword">import</span> cv2
+<span class="keyword">from</span> scipy.spatial <span class="keyword">import</span> Delaunay
+
+<span class="keyword">def</span> <span class="function">generate_mesh</span>(rgba_layer, density=<span class="string">"medium"</span>):
+    <span class="comment"># Extract alpha channel for shape</span>
+    alpha = rgba_layer[:, :, 3]
+    
+    <span class="comment"># Find contours (outline of the layer)</span>
+    contours, _ = cv2.findContours(alpha, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+    
+    <span class="comment"># Sample points along contours</span>
+    edge_points = sample_contour_points(contours, spacing=10)
+    
+    <span class="comment"># Add interior points for better deformation</span>
+    interior_points = generate_interior_grid(alpha, spacing=20)
+    
+    <span class="comment"># Combine and triangulate</span>
+    all_points = np.vstack([edge_points, interior_points])
+    triangles = Delaunay(all_points)
+    
+    <span class="keyword">return</span> {
+        <span class="string">"vertices"</span>: all_points,  <span class="comment"># [[x, y], ...]</span>
+        <span class="string">"triangles"</span>: triangles.simplices,  <span class="comment"># [[v0, v1, v2], ...]</span>
+        <span class="string">"uvs"</span>: normalize_to_uv(all_points, rgba_layer.shape)  <span class="comment"># Texture coords</span>
+    }
+</pre>
+
+    <div class="highlight-box">
+        <strong>⚠️ Mesh Density Matters:</strong>
+        <ul>
+            <li><strong>Too sparse:</strong> Deformations look blocky and unnatural</li>
+            <li><strong>Too dense:</strong> Performance issues, harder to animate</li>
+            <li><strong>Sweet spot:</strong> ~50-200 vertices per major part (eye, mouth), ~200-500 for large parts
+                (hair, body)</li>
+        </ul>
+    </div>
+
+    <h2>Stage 4: Deformer Setup</h2>
+
+    <p>Deformers control HOW the mesh moves. Live2D has two types:</p>
+
+    <table>
+        <tr>
+            <th>Deformer Type</th>
+            <th>Best For</th>
+            <th>How It Works</th>
+        </tr>
+        <tr>
+            <td><strong>Warp Deformer</strong></td>
+            <td>Organic shapes (hair, clothes)</td>
+            <td>Grid of control points that bend the mesh</td>
+        </tr>
+        <tr>
+            <td><strong>Rotation Deformer</strong></td>
+            <td>Rigid parts (head, limbs)</td>
+            <td>Rotates around a pivot point</td>
+        </tr>
+    </table>
+
+    <div class="pipeline-step">
+        <h4><span class="step-num">4</span> Auto-Generate Deformer Hierarchy</h4>
+    </div>
+
+    <pre>
+<span class="comment"># Example: Deformer structure template</span>
+DEFORMER_TEMPLATE = {
+    <span class="string">"root"</span>: {
+        <span class="string">"type"</span>: <span class="string">"rotation"</span>,
+        <span class="string">"children"</span>: {
+            <span class="string">"head"</span>: {
+                <span class="string">"type"</span>: <span class="string">"rotation"</span>,
+                <span class="string">"params"</span>: [<span class="string">"ParamAngleX"</span>, <span class="string">"ParamAngleY"</span>, <span class="string">"ParamAngleZ"</span>],
+                <span class="string">"children"</span>: {
+                    <span class="string">"face"</span>: { <span class="string">"type"</span>: <span class="string">"warp"</span>, <span class="string">"grid"</span>: [3, 3] },
+                    <span class="string">"front_hair"</span>: { <span class="string">"type"</span>: <span class="string">"warp"</span>, <span class="string">"grid"</span>: [4, 4], <span class="string">"physics"</span>: <span class="keyword">True</span> },
+                    <span class="string">"back_hair"</span>: { <span class="string">"type"</span>: <span class="string">"warp"</span>, <span class="string">"grid"</span>: [4, 4], <span class="string">"physics"</span>: <span class="keyword">True</span> },
+                    <span class="string">"left_eye"</span>: {
+                        <span class="string">"type"</span>: <span class="string">"warp"</span>,
+                        <span class="string">"params"</span>: [<span class="string">"ParamEyeLOpen"</span>, <span class="string">"ParamEyeBallX"</span>, <span class="string">"ParamEyeBallY"</span>]
+                    },
+                    <span class="string">"right_eye"</span>: { <span class="comment">/* mirror of left_eye */</span> },
+                    <span class="string">"mouth"</span>: {
+                        <span class="string">"type"</span>: <span class="string">"warp"</span>,
+                        <span class="string">"params"</span>: [<span class="string">"ParamMouthOpenY"</span>, <span class="string">"ParamMouthForm"</span>]
+                    }
+                }
+            },
+            <span class="string">"body"</span>: {
+                <span class="string">"type"</span>: <span class="string">"rotation"</span>,
+                <span class="string">"params"</span>: [<span class="string">"ParamBodyAngleX"</span>, <span class="string">"ParamBodyAngleY"</span>]
+            }
+        }
+    }
+}
+</pre>
+
+    <h2>Stage 5: Parameter & Keyform Binding</h2>
+
+    <p>Parameters define controllable variables (e.g., "ParamMouthOpenY" = 0 to 1). Keyforms define what the mesh looks
+        like at specific parameter values.</p>
+
+    <div class="pipeline-step">
+        <h4><span class="step-num">5</span> Generate Keyforms for Each Parameter</h4>
+        <p>This is the hardest part to automate. Options:</p>
+    </div>
+
+    <h3>Option A: Template-Based (Recommended for MVP)</h3>
+    <pre>
+<span class="comment"># Use predefined deformation patterns</span>
+KEYFORM_TEMPLATES = {
+    <span class="string">"ParamMouthOpenY"</span>: {
+        0.0: <span class="string">"mouth_closed.json"</span>,   <span class="comment"># Mouth vertices at rest</span>
+        1.0: <span class="string">"mouth_open.json"</span>      <span class="comment"># Mouth vertices stretched down</span>
+    },
+    <span class="string">"ParamEyeLOpen"</span>: {
+        0.0: <span class="string">"eye_closed.json"</span>,    <span class="comment"># Eyelid vertices covering eye</span>
+        1.0: <span class="string">"eye_open.json"</span>       <span class="comment"># Eyelid vertices raised</span>
+    }
+}
+
+<span class="comment"># Apply template deformations scaled to the actual mesh</span>
+<span class="keyword">def</span> <span class="function">apply_template</span>(mesh, param_name, param_value, templates):
+    template = templates[param_name][param_value]
+    scaled_offsets = scale_template_to_mesh(template, mesh)
+    <span class="keyword">return</span> mesh.vertices + scaled_offsets
+</pre>
+
+    <h3>Option B: AI-Predicted Deformations (Advanced)</h3>
+    <pre>
+<span class="comment"># Train a model to predict vertex offsets</span>
+<span class="comment"># Input: mesh vertices, parameter name, parameter value</span>
+<span class="comment"># Output: vertex offset deltas</span>
+
+<span class="keyword">class</span> <span class="function">DeformationPredictor</span>(nn.Module):
+    <span class="keyword">def</span> <span class="function">forward</span>(self, vertices, param_embedding, param_value):
+        <span class="comment"># Encoder-decoder architecture</span>
+        <span class="comment"># Predicts how each vertex should move</span>
+        <span class="keyword">return</span> vertex_offsets
+</pre>
+
+    <div class="info-box">
+        <strong>🔑 Critical Parameters for Chatbot Use:</strong>
+        <ul>
+            <li><code>ParamMouthOpenY</code> - Lip sync (REQUIRED)</li>
+            <li><code>ParamMouthForm</code> - Smile/frown</li>
+            <li><code>ParamEyeLOpen</code> / <code>ParamEyeROpen</code> - Blinking</li>
+            <li><code>ParamAngleX/Y/Z</code> - Head tilt</li>
+        </ul>
+        At minimum, implement <code>ParamMouthOpenY</code> for basic lip sync functionality.
+    </div>
+
+    <h2>Stage 6: Export to Live2D Format</h2>
+
+    <p>Live2D models consist of multiple files:</p>
+
+    <div class="file-structure">
+        <span class="folder">📁 output_model/</span><br>
+        ├── <span class="generated">model.model3.json</span> ← Entry point, links everything<br>
+        ├── <span class="generated">model.moc3</span> ← Compiled binary (mesh, deformers, params)<br>
+        ├── <span class="folder">📁 textures/</span><br>
+        │&nbsp;&nbsp;&nbsp;└── <span class="generated">texture_00.png</span> ← Packed texture atlas<br>
+        ├── <span class="generated">model.physics3.json</span> ← Physics simulation config<br>
+        └── <span class="folder">📁 motions/</span><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;└── <span class="generated">idle.motion3.json</span> ← Optional animations
+    </div>
+
+    <div class="pipeline-step">
+        <h4><span class="step-num">6</span> Generate model3.json and .moc3</h4>
+    </div>
+
+    <pre>
+<span class="comment"># model3.json structure</span>
+{
+    <span class="string">"Version"</span>: 3,
+    <span class="string">"FileReferences"</span>: {
+        <span class="string">"Moc"</span>: <span class="string">"model.moc3"</span>,
+        <span class="string">"Textures"</span>: [<span class="string">"textures/texture_00.png"</span>],
+        <span class="string">"Physics"</span>: <span class="string">"model.physics3.json"</span>,
+        <span class="string">"Motions"</span>: {
+            <span class="string">"Idle"</span>: [{ <span class="string">"File"</span>: <span class="string">"motions/idle.motion3.json"</span> }]
+        }
+    },
+    <span class="string">"Groups"</span>: [
+        { <span class="string">"Target"</span>: <span class="string">"Parameter"</span>, <span class="string">"Name"</span>: <span class="string">"LipSync"</span>, <span class="string">"Ids"</span>: [<span class="string">"ParamMouthOpenY"</span>] },
+        { <span class="string">"Target"</span>: <span class="string">"Parameter"</span>, <span class="string">"Name"</span>: <span class="string">"EyeBlink"</span>, <span class="string">"Ids"</span>: [<span class="string">"ParamEyeLOpen"</span>, <span class="string">"ParamEyeROpen"</span>] }
+    ]
+}
+</pre>
+
+    <div class="danger-box">
+        <strong>⚠️ The .moc3 Challenge:</strong> The <code>.moc3</code> file is a proprietary binary format. You have
+        two options:
+        <ol>
+            <li><strong>Use Live2D Cubism SDK:</strong> Export from Cubism Editor (requires their software)</li>
+            <li><strong>Reverse-engineer format:</strong> Community efforts exist but are incomplete and legally gray
+            </li>
+            <li><strong>Alternative:</strong> Export to an intermediate format and convert using Cubism Editor's batch
+                export</li>
+        </ol>
+    </div>
+
+    <h2>🛠️ Implementation Approaches</h2>
+
+    <h3>Approach A: Python Pipeline + Cubism Export</h3>
+    <ol>
+        <li>Run segmentation + inpainting in Python</li>
+        <li>Export layered PSD with layer names matching Cubism conventions</li>
+        <li>Use Cubism Editor's auto-mesh and template features</li>
+        <li>Script Cubism Editor automation if possible</li>
+    </ol>
+
+    <h3>Approach B: WebGL Runtime (No .moc3)</h3>
+    <ol>
+        <li>Build your own simplified Live2D-like renderer</li>
+        <li>Use JSON for mesh/deformer/parameter definitions</li>
+        <li>Render with WebGL/Three.js</li>
+        <li>Less compatible but fully open</li>
+    </ol>
+
+    <h3>Approach C: Hybrid with ComfyUI</h3>
+    <ol>
+        <li>Use ComfyUI workflows for segmentation + inpainting</li>
+        <li>Export intermediate format</li>
+        <li>Post-process into Live2D structure</li>
+    </ol>
+
+    <h2>📚 Resources & Libraries</h2>
+
+    <table>
+        <tr>
+            <th>Component</th>
+            <th>Library/Tool</th>
+            <th>Link</th>
+        </tr>
+        <tr>
+            <td>Anime Segmentation</td>
+            <td>anime-segmentation</td>
+            <td><a href="https://github.com/SkyTNT/anime-segmentation">GitHub</a></td>
+        </tr>
+        <tr>
+            <td>Face Segmentation</td>
+            <td>Anime-Face-Segmentation</td>
+            <td><a href="https://github.com/siyeong0/Anime-Face-Segmentation">GitHub</a></td>
+        </tr>
+        <tr>
+            <td>Inpainting</td>
+            <td>Stable Diffusion Inpainting</td>
+            <td><a href="https://huggingface.co/runwayml/stable-diffusion-inpainting">HuggingFace</a></td>
+        </tr>
+        <tr>
+            <td>Amodal Completion</td>
+            <td>pix2gestalt</td>
+            <td><a href="https://github.com/cvlab-columbia/pix2gestalt">GitHub</a></td>
+        </tr>
+        <tr>
+            <td>Layer Decomposition</td>
+            <td>Qwen-Image-Layered</td>
+            <td><a href="https://huggingface.co/Qwen">HuggingFace</a></td>
+        </tr>
+        <tr>
+            <td>Live2D SDK</td>
+            <td>Cubism SDK for Web</td>
+            <td><a href="https://www.live2d.com/en/download/cubism-sdk/">live2d.com</a></td>
+        </tr>
+        <tr>
+            <td>Mesh Generation</td>
+            <td>scipy.spatial.Delaunay</td>
+            <td><a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.spatial.Delaunay.html">SciPy</a>
+            </td>
+        </tr>
+    </table>
+
+    <h2>🎯 Minimum Viable Pipeline</h2>
+
+    <div class="success-box">
+        <strong>Start Here:</strong> For a working prototype, focus on:
+        <ol>
+            <li>Segment face + hair + eyes + mouth (4 layers minimum)</li>
+            <li>Inpaint hair behind face</li>
+            <li>Generate simple quad meshes (not full triangulation)</li>
+            <li>Implement only <code>ParamMouthOpenY</code> keyforms</li>
+            <li>Export as custom JSON + use a WebGL renderer</li>
+        </ol>
+        This gives you a talking avatar from a single image. Expand from there.
+    </div>
+
+    <p>The full automated pipeline is challenging but achievable. Start with the MVP, iterate on quality, and expand
+        parameter support over time. 🚀</p>
+
+</div>

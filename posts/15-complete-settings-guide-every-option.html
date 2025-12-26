@@ -1,0 +1,584 @@
+<title>Complete Settings Guide: Every Option Explained</title>
+<style>
+    .settings-guide {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        line-height: 1.8;
+        color: #333;
+        max-width: 850px;
+        margin: 0 auto;
+    }
+
+    .settings-guide h2 {
+        color: #2c3e50;
+        border-bottom: 3px solid #3498db;
+        padding-bottom: 10px;
+        margin-top: 40px;
+    }
+
+    .settings-guide h3 {
+        color: #34495e;
+        margin-top: 25px;
+    }
+
+    .settings-guide p {
+        margin: 15px 0;
+    }
+
+    .settings-guide .intro {
+        font-size: 1.1em;
+        color: #555;
+        background: linear-gradient(135deg, #e8f4fc 0%, #d6eaf8 100%);
+        padding: 20px;
+        border-radius: 10px;
+        border-left: 5px solid #3498db;
+    }
+
+    .settings-guide .section {
+        background: #f8f9fa;
+        border-radius: 12px;
+        padding: 25px;
+        margin: 25px 0;
+        border-left: 5px solid #3498db;
+    }
+
+    .settings-guide .section h3 {
+        margin-top: 0;
+        color: #2980b9;
+    }
+
+    .settings-guide .setting-item {
+        background: white;
+        border: 1px solid #e0e0e0;
+        border-radius: 8px;
+        padding: 15px;
+        margin: 15px 0;
+    }
+
+    .settings-guide .setting-item h4 {
+        margin: 0 0 8px 0;
+        color: #2c3e50;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .settings-guide .setting-item p {
+        margin: 5px 0 0 0;
+        color: #666;
+        font-size: 0.95em;
+    }
+
+    .settings-guide .setting-item .type {
+        display: inline-block;
+        background: #ecf0f1;
+        padding: 2px 8px;
+        border-radius: 4px;
+        font-size: 0.8em;
+        color: #7f8c8d;
+        margin-left: auto;
+    }
+
+    .settings-guide .tip-box {
+        background: #d4edda;
+        padding: 15px 20px;
+        border-radius: 8px;
+        border-left: 4px solid #28a745;
+        margin: 20px 0;
+    }
+
+    .settings-guide .warn-box {
+        background: #fff3cd;
+        padding: 15px 20px;
+        border-radius: 8px;
+        border-left: 4px solid #ffc107;
+        margin: 20px 0;
+    }
+
+    .settings-guide .info-box {
+        background: #d1ecf1;
+        padding: 15px 20px;
+        border-radius: 8px;
+        border-left: 4px solid #17a2b8;
+        margin: 20px 0;
+    }
+
+    .settings-guide table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 20px 0;
+        font-size: 0.9em;
+    }
+
+    .settings-guide th {
+        background: #3498db;
+        color: white;
+        padding: 12px 15px;
+        text-align: left;
+    }
+
+    .settings-guide td {
+        padding: 10px 15px;
+        border-bottom: 1px solid #eee;
+    }
+
+    .settings-guide tr:hover {
+        background: #f8f9fa;
+    }
+
+    .settings-guide .toc {
+        background: #f8f9fa;
+        padding: 20px;
+        border-radius: 10px;
+        margin: 25px 0;
+    }
+
+    .settings-guide .toc h4 {
+        margin: 0 0 15px 0;
+    }
+
+    .settings-guide .toc ul {
+        margin: 0;
+        padding-left: 25px;
+    }
+
+    .settings-guide .toc li {
+        margin: 5px 0;
+    }
+
+    .settings-guide .toc a {
+        color: #3498db;
+        text-decoration: none;
+    }
+
+    .settings-guide .toc a:hover {
+        text-decoration: underline;
+    }
+
+    .settings-guide code {
+        background: #f4f4f4;
+        padding: 2px 6px;
+        border-radius: 4px;
+        font-family: 'Consolas', monospace;
+        font-size: 0.9em;
+    }
+</style>
+
+<div class="settings-guide">
+
+    <p class="intro">
+        This guide covers every setting in the chatbot application. Click the ⚙️ gear icon to open the Settings panel,
+        then explore each section below to understand what each option does.
+    </p>
+
+    <div class="toc">
+        <h4>📑 Table of Contents</h4>
+        <ul>
+            <li><a href="#persona">🧠 Persona System Prompt</a></li>
+            <li><a href="#memory">🧠 Memory Settings</a></li>
+            <li><a href="#model">🧩 Model Settings</a></li>
+            <li><a href="#language">🌐 Language Settings</a></li>
+            <li><a href="#voice">🔊 Voice Settings</a></li>
+            <li><a href="#audio">🎧 Audio Settings</a></li>
+            <li><a href="#display">🖥️ Display Settings</a></li>
+            <li><a href="#background">🖼️ Background Image</a></li>
+            <li><a href="#preferences">⚙️ Preferences</a></li>
+            <li><a href="#debug">🐞 Debug Settings</a></li>
+            <li><a href="#help">❓ Help & Tutorial</a></li>
+        </ul>
+    </div>
+
+    <!-- PERSONA -->
+    <div class="section" id="persona">
+        <h3>🧠 Persona System Prompt</h3>
+        <p>Control who your AI companion is—their identity, personality, and how they interact with you.</p>
+
+        <div class="setting-item">
+            <h4>🆔 Core Identity <span class="type">Text Area</span></h4>
+            <p>Define the AI's fundamental character. This is the unchangeable core of who they are—their name, role,
+                and basic traits. Example: "You are Haru, a friendly and curious AI companion."</p>
+        </div>
+
+        <div class="setting-item">
+            <h4>🎭 Custom Personality / Roleplay <span class="type">Text Area</span></h4>
+            <p>Add custom personality traits, roleplay scenarios, or specific behaviors on top of the core identity.
+                Example: "You are a tsundere childhood friend who secretly has a crush on the user."</p>
+        </div>
+
+        <div class="setting-item">
+            <h4>💾 Save Persona Settings <span class="type">Button</span></h4>
+            <p>Saves your persona configuration. Changes won't take effect until you save.</p>
+        </div>
+
+        <div class="setting-item">
+            <h4>🔄 Reset Persona <span class="type">Button</span></h4>
+            <p>Resets persona to the default settings, clearing any custom personality you've created.</p>
+        </div>
+
+        <div class="tip-box">
+            <strong>💡 Tip:</strong> Keep your Core Identity concise (1-3 sentences). Use Custom Personality for
+            detailed traits and scenarios.
+        </div>
+    </div>
+
+    <!-- MEMORY -->
+    <div class="section" id="memory">
+        <h3>🧠 Memory Settings</h3>
+        <p>Control how much conversation history the AI remembers when generating responses.</p>
+
+        <div class="setting-item">
+            <h4>🧵 Conversation Memory Size <span class="type">Slider (5-50)</span></h4>
+            <p>The number of previous messages the AI includes for context. Higher values = better memory but more API
+                usage. Default: 10 messages.</p>
+        </div>
+
+        <div class="info-box">
+            <strong>📊 Recommended Values:</strong>
+            <ul>
+                <li><strong>5-10:</strong> Quick, lightweight conversations</li>
+                <li><strong>15-25:</strong> Good balance for roleplay and ongoing stories</li>
+                <li><strong>30-50:</strong> Maximum context for complex narratives (may be slower)</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- MODEL -->
+    <div class="section" id="model">
+        <h3>🧩 Model Settings</h3>
+        <p>Choose and manage your Live2D avatar models.</p>
+
+        <div class="setting-item">
+            <h4>🎭 Select Model <span class="type">Dropdown</span></h4>
+            <p>Choose from available Live2D models. Click the dropdown to see thumbnails and model names.</p>
+        </div>
+
+        <div class="setting-item">
+            <h4>➕ Add Custom Model <span class="type">Input Fields + Button</span></h4>
+            <p>Add your own Live2D model by providing:</p>
+            <ul>
+                <li><strong>Model Name:</strong> Optional friendly name (auto-detected from URL if blank)</li>
+                <li><strong>Model URL:</strong> Direct URL to the <code>.model3.json</code> file (required)</li>
+                <li><strong>Thumbnail URL:</strong> Optional image for the model selector</li>
+            </ul>
+        </div>
+
+        <div class="setting-item">
+            <h4>📂 Custom Models <span class="type">Dropdown</span></h4>
+            <p>Select and manage custom models you've added. Shows model info and removal options.</p>
+        </div>
+
+        <div class="setting-item">
+            <h4>♻️ Reset Model Position & Zoom <span class="type">Button</span></h4>
+            <p>Resets the model's position and zoom level to defaults. Useful if you've dragged the model off-screen.
+            </p>
+        </div>
+
+        <div class="setting-item">
+            <h4>🗑️ Clear All Models <span class="type">Button</span></h4>
+            <p>Removes all models currently displayed on screen.</p>
+        </div>
+
+        <div class="setting-item">
+            <h4>📖 Open Model Gallery <span class="type">Button</span></h4>
+            <p>Opens a fullscreen gallery showing all available models with thumbnails for easy selection.</p>
+        </div>
+
+        <div class="setting-item">
+            <h4>🗑️ Clear Custom Models <span class="type">Button</span></h4>
+            <p>Removes all custom models you've added (built-in models remain).</p>
+        </div>
+    </div>
+
+    <!-- LANGUAGE -->
+    <div class="section" id="language">
+        <h3>🌐 Language Settings</h3>
+        <p>Configure the language for AI responses and interface.</p>
+
+        <div class="setting-item">
+            <h4>🌍 Language <span class="type">Dropdown</span></h4>
+            <p>Select from 193 supported languages. The AI will respond in your chosen language.</p>
+        </div>
+
+        <div class="setting-item">
+            <h4>🔤 Show Transliteration (for JA, KO) <span class="type">Checkbox</span></h4>
+            <p>When enabled, shows romanized pronunciation (romaji/romanization) under Japanese and Korean text.</p>
+        </div>
+
+        <div class="setting-item">
+            <h4>🈯 Translate User Interface (AI) <span class="type">Checkbox</span></h4>
+            <p>Translates all UI labels and buttons to your selected language using AI. May take a moment to load.</p>
+        </div>
+
+        <div class="setting-item">
+            <h4>🔄 Reset Languages <span class="type">Button</span></h4>
+            <p>Resets language settings to English (default).</p>
+        </div>
+    </div>
+
+    <!-- VOICE -->
+    <div class="section" id="voice">
+        <h3>🔊 Voice Settings</h3>
+        <p>Control the AI's text-to-speech voice output.</p>
+
+        <div class="setting-item">
+            <h4>🔈 Enable Voice (TTS) <span class="type">Checkbox</span></h4>
+            <p>Master switch for voice output. When enabled, the AI speaks its responses aloud.</p>
+        </div>
+
+        <div class="setting-item">
+            <h4>🎙️ Voice <span class="type">Dropdown</span></h4>
+            <p>Select which voice the AI uses. Options include female voices in various languages. Set to "None" to
+                disable TTS while keeping other voice controls visible.</p>
+        </div>
+
+        <div class="setting-item">
+            <h4>📏 TTS Chunk Character Limit <span class="type">Slider (50-1000)</span></h4>
+            <p>Maximum characters per TTS request. Lower values = more frequent but shorter audio clips. Default: 300.
+            </p>
+        </div>
+
+        <div class="setting-item">
+            <h4>▶️ Play / ⏸️ Pause / ⏹️ Stop <span class="type">Buttons</span></h4>
+            <p>Manual controls for voice playback. Play resumes, Pause halts temporarily, Stop cancels all queued
+                speech.</p>
+        </div>
+
+        <div class="tip-box">
+            <strong>💡 Tip:</strong> The voice automatically matches your language when you switch languages. Languages
+            without native voices use the closest phonetic alternative.
+        </div>
+    </div>
+
+    <!-- AUDIO -->
+    <div class="section" id="audio">
+        <h3>🎧 Audio Settings</h3>
+        <p>Ambient audio and background music.</p>
+
+        <div class="setting-item">
+            <h4>📻 Radio Stream <span class="type">Play/Pause + Volume Slider</span></h4>
+            <p>Toggle an anime music radio stream (Listen.moe). Adjust volume with the slider (default: 25%).</p>
+        </div>
+    </div>
+
+    <!-- DISPLAY -->
+    <div class="section" id="display">
+        <h3>🖥️ Display Settings</h3>
+        <p>Customize the visual appearance of the interface.</p>
+
+        <div class="setting-item">
+            <h4>⏰ Show Clock <span class="type">Checkbox</span></h4>
+            <p>Displays a digital clock on the screen.</p>
+        </div>
+
+        <div class="setting-item">
+            <h4>🪟 Chatbox Opacity <span class="type">Slider (0.1-1.0)</span></h4>
+            <p>Controls transparency of the entire chat container. Lower = more transparent. Default: 0.9.</p>
+        </div>
+
+        <div class="setting-item">
+            <h4>💬 Message Bubble Opacity <span class="type">Slider (0.1-1.0)</span></h4>
+            <p>Controls transparency of individual message bubbles. Default: 0.3 (quite transparent for aesthetic).</p>
+        </div>
+
+        <div class="setting-item">
+            <h4>🖼️ Background Image Opacity <span class="type">Slider (0-1.0)</span></h4>
+            <p>Controls how visible the background image is. 0 = hidden, 1 = fully visible. Default: 1.0.</p>
+        </div>
+    </div>
+
+    <!-- BACKGROUND -->
+    <div class="section" id="background">
+        <h3>🖼️ Background Image</h3>
+        <p>Customize the scene behind your AI companion.</p>
+
+        <div class="setting-item">
+            <h4>✨ AI Background Prompt <span class="type">Text Input + Button</span></h4>
+            <p>Describe a scene and click "Generate Background" to create an AI-generated image. Example: "tranquil
+                starry night sky, minimal, soft light"</p>
+        </div>
+
+        <div class="setting-item">
+            <h4>🌐 Generate from Conversation <span class="type">Button</span></h4>
+            <p>Automatically generates a background based on the current conversation context.</p>
+        </div>
+
+        <div class="setting-item">
+            <h4>🔗 Custom Background URL <span class="type">Text Input + Button</span></h4>
+            <p>Set a background using any image URL. Click "Set Background" to apply.</p>
+        </div>
+
+        <div class="setting-item">
+            <h4>🧹 Clear Background <span class="type">Button</span></h4>
+            <p>Removes the current background, returning to the default dark theme.</p>
+        </div>
+
+        <div class="setting-item">
+            <h4>📚 Background Library <span class="type">Gallery</span></h4>
+            <p>View and manage all generated or added backgrounds. Click to apply, use Select mode to delete multiple.
+            </p>
+        </div>
+
+        <div class="setting-item">
+            <h4>📐 Background Fit <span class="type">Button Group</span></h4>
+            <p>Control how the background image is displayed:</p>
+            <ul>
+                <li><strong>Contain:</strong> Full image visible, may have letterboxing</li>
+                <li><strong>Cover:</strong> Fills screen, may crop edges</li>
+                <li><strong>Stretch:</strong> Stretches to fill (may distort)</li>
+                <li><strong>Top/Center/Bottom:</strong> Aligns the image vertically</li>
+                <li><strong>Fit Width/Height:</strong> Scales to fit one dimension</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- PREFERENCES -->
+    <div class="section" id="preferences">
+        <h3>⚙️ Preferences</h3>
+        <p>General application behavior settings.</p>
+
+        <div class="setting-item">
+            <h4>🪄 Always show Settings on page load <span class="type">Checkbox</span></h4>
+            <p>When enabled, the Settings panel opens automatically every time you load the page. Otherwise, it
+                remembers whether you left it open or closed.</p>
+        </div>
+
+        <div class="setting-item">
+            <h4>⏱️ Include current time in context <span class="type">Checkbox</span></h4>
+            <p>Provides the AI with the current date and time so it can give time-aware responses like "Good morning!"
+                or reference the current day.</p>
+        </div>
+
+        <div class="setting-item">
+            <h4>🔋 Include battery status in context <span class="type">Checkbox</span></h4>
+            <p>Lets the AI know your device's battery level and charging state. The AI might say "I see you're running
+                low on battery!"</p>
+        </div>
+
+        <div class="setting-item">
+            <h4>🧬 Load multiple models at once <span class="type">Checkbox</span></h4>
+            <p>When enabled, selecting a model adds it to the screen without removing existing ones. Great for having
+                multiple characters interact!</p>
+        </div>
+    </div>
+
+    <!-- DEBUG -->
+    <div class="section" id="debug">
+        <h3>🐞 Debug Settings</h3>
+        <p>Tools for developers and troubleshooting.</p>
+
+        <div class="setting-item">
+            <h4>🧰 Enable Debug Panel <span class="type">Checkbox</span></h4>
+            <p>Shows a draggable debug panel with real-time logs of system events, AI responses, and errors.</p>
+        </div>
+
+        <div class="setting-item">
+            <h4>📜 Auto-scroll Log <span class="type">Checkbox</span></h4>
+            <p>Automatically scrolls the debug log to show the newest entries.</p>
+        </div>
+
+        <div class="setting-item">
+            <h4>🧹 Clear Debug Log <span class="type">Button</span></h4>
+            <p>Clears all entries in the debug panel.</p>
+        </div>
+
+        <div class="setting-item">
+            <h4>💬 Show Live2D Debug Logs <span class="type">Checkbox</span></h4>
+            <p>Shows detailed logs about Live2D model loading, animations, and interactions.</p>
+        </div>
+
+        <div class="setting-item">
+            <h4>🧠 Show AI Debug Logs <span class="type">Checkbox</span></h4>
+            <p>Shows logs about AI requests, responses, and processing.</p>
+        </div>
+
+        <div class="setting-item">
+            <h4>🔊 Show TTS Debug Logs <span class="type">Checkbox</span></h4>
+            <p>Shows logs about text-to-speech processing, chunking, and playback.</p>
+        </div>
+
+        <div class="setting-item">
+            <h4>🔌 Test Fallback AI <span class="type">Checkbox</span></h4>
+            <p>Forces the app to use the offline fallback AI instead of the main API. Useful for testing offline
+                behavior.</p>
+        </div>
+
+        <div class="warn-box">
+            <strong>⚠️ Note:</strong> Debug settings are primarily for developers. Enabling all logs may affect
+            performance.
+        </div>
+    </div>
+
+    <!-- HELP -->
+    <div class="section" id="help">
+        <h3>❓ Help & Tutorial</h3>
+
+        <div class="setting-item">
+            <h4>📘 Launch Tutorial <span class="type">Button</span></h4>
+            <p>Opens an interactive walkthrough that explains the main features of the application.</p>
+        </div>
+    </div>
+
+    <h2>📋 Quick Reference Table</h2>
+
+    <table>
+        <tr>
+            <th>Setting</th>
+            <th>Type</th>
+            <th>Default</th>
+            <th>What It Does</th>
+        </tr>
+        <tr>
+            <td>Memory Size</td>
+            <td>Slider</td>
+            <td>10</td>
+            <td>Messages AI remembers</td>
+        </tr>
+        <tr>
+            <td>Language</td>
+            <td>Dropdown</td>
+            <td>English</td>
+            <td>AI response language</td>
+        </tr>
+        <tr>
+            <td>Voice</td>
+            <td>Dropdown</td>
+            <td>Auto</td>
+            <td>TTS voice selection</td>
+        </tr>
+        <tr>
+            <td>TTS Chunk Limit</td>
+            <td>Slider</td>
+            <td>300</td>
+            <td>Max chars per speech chunk</td>
+        </tr>
+        <tr>
+            <td>Chatbox Opacity</td>
+            <td>Slider</td>
+            <td>0.9</td>
+            <td>Chat container transparency</td>
+        </tr>
+        <tr>
+            <td>Message Opacity</td>
+            <td>Slider</td>
+            <td>0.3</td>
+            <td>Message bubble transparency</td>
+        </tr>
+        <tr>
+            <td>Background Opacity</td>
+            <td>Slider</td>
+            <td>1.0</td>
+            <td>Background image visibility</td>
+        </tr>
+        <tr>
+            <td>Radio Volume</td>
+            <td>Slider</td>
+            <td>0.25</td>
+            <td>Background music volume</td>
+        </tr>
+    </table>
+
+    <div class="tip-box">
+        <strong>🎉 Pro Tip:</strong> All settings are automatically saved to your browser's local storage. They'll
+        persist across sessions until you clear your browser data.
+    </div>
+
+</div>
