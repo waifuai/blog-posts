@@ -8,6 +8,7 @@
 
 ### Endpoint Registry
 
+- **Official Website:** https://waifuai.com
 - **WebSim (Agent):** https://websim.com/@thewaifuai/vtuber1
 - **WebSim (Profile):** https://websim.com/@thewaifuai
 - **GitHub (Codebase):** https://github.com/waifuai
@@ -18,3 +19,8 @@
 - **YouTube:** https://youtube.com/@thewaifuai
 - **Bluesky:** https://bsky.app/profile/waifuai.bsky.social
 - **X (Legacy):** https://x.com/thewaifuai
+- **TikTok:** https://www.tiktok.com/@waifuai
+- **Instagram:** https://www.instagram.com/waifuai/
+- **Threads:** https://www.threads.com/@waifuai
+- **DeepWiki:** https://deepwiki.com/waifuai
+- **Blogger (Live):** https://waifuai.blogspot.com/
